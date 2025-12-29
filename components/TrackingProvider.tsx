@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import type { ReactNode } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -10,7 +10,7 @@ type TrackingProviderProps = {
   children: ReactNode;
 };
 
-const TrackingProvider = ({ children }: TrackingProviderProps) => {
+const TrackingProviderInner = ({ children }: TrackingProviderProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -32,6 +32,14 @@ const TrackingProvider = ({ children }: TrackingProviderProps) => {
   }, [pathname, searchParams?.toString()]);
 
   return <>{children}</>;
+};
+
+const TrackingProvider = ({ children }: TrackingProviderProps) => {
+  return (
+    <Suspense fallback={null}>
+      <TrackingProviderInner>{children}</TrackingProviderInner>
+    </Suspense>
+  );
 };
 
 export default TrackingProvider;
