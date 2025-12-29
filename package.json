@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "mkdir -p .next && touch .next/routes-manifest.json"
   },
   "dependencies": {
     "next": "14.2.3",
