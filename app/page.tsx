@@ -1,0 +1,295 @@
+import type { Metadata, Route } from "next";
+import Link from "next/link";
+import { ArrowLeftCircle, CheckCircle2, PhoneCall } from "lucide-react";
+
+import JsonLd from "@/components/JsonLd";
+import LeadTrackedLink from "@/components/LeadTrackedLink";
+import {
+  BASE_URL,
+  BUSINESS_BRAND,
+  BUSINESS_NAME_AR,
+  DEFAULT_KEYWORDS,
+  FORMATTED_PHONE,
+  PHONE_NUMBER,
+  SERVICE_AREAS,
+  WHATSAPP_LINK,
+} from "@/lib/constants";
+
+const heroHighlights = [
+  "استجابة فورية خلال 30 دقيقة في معظم مناطق الكويت",
+  "فنيون معتمدون بخبرة أكثر من 10 سنوات",
+  "ضمان على جميع الأعمال وقطع الغيار الأصلية",
+];
+
+type ServiceCard = {
+  slug: string;
+  href: Route;
+  title: string;
+  description: string;
+  perks: string[];
+  accent: string;
+};
+
+const services: ServiceCard[] = [
+  {
+    slug: "satellite",
+    href: "/satellite" as Route,
+    title: "حلول الستلايت و IPTV",
+    description:
+      "تركيب وصيانة جميع أنواع الستلايت والرسيفر مع دعم القنوات المشفرة وخيارات IPTV الحديثة.",
+    perks: ["معايرة دقيقة للإشارة", "دعم جميع أجهزة الرسيفر", "خدمة رسيفر واي فاي"],
+    accent: "bg-kuwait-green/10",
+  },
+  {
+    slug: "mobile-mechanic",
+    href: "/mobile-mechanic" as Route,
+    title: "الميكانيكي المتنقل 24/7",
+    description:
+      "خدمة إنقاذ الطريق وتصليح السيارات في موقعك داخل حدود الكويت مع إمكانية مشاركة الموقع لحظيًا.",
+    perks: ["تشخيص إلكتروني", "بطاريات وزيوت أصلية", "سحب ونقل متوفر"],
+    accent: "bg-kuwait-red/10",
+  },
+  {
+    slug: "oven-repair",
+    href: "/oven-repair" as Route,
+    title: "تنظيف وصيانة الأفران",
+    description:
+      "تنظيف عميق للأفران والطبّاخات، تغيير البواجي والفحص الحراري مع ضمان السلامة.",
+    perks: ["مواد تنظيف آمنة", "فحص شامل", "صيانة دورية"],
+    accent: "bg-kuwait-green/10",
+  },
+  {
+    slug: "cctv",
+    href: "/cctv" as Route,
+    title: "كاميرات المراقبة والإنتركم",
+    description:
+      "حلول متكاملة للأنظمة الأمنية تشمل كاميرات UHD، أجهزة تسجيل سحابية، وإنتركم ذكي للمنازل والشركات.",
+    perks: ["رؤية ليلية", "تطبيقات هواتف", "تركيب سريع"],
+    accent: "bg-kuwait-red/10",
+  },
+];
+
+const testimonials = [
+  {
+    name: "أبو عبد الله - السالمية",
+    text: "ركّبوا لي نظام IPTV كامل خلال ساعة واحدة فقط، القنوات تعمل بدقة 4K والخدمة ممتازة.",
+  },
+  {
+    name: "سارة - حولي",
+    text: "الميكانيكي المتنقل وصل خلال 20 دقيقة وأنقذني من تعطّل السيارة في الطريق الدائري.",
+  },
+  {
+    name: "جاسم - الجهراء",
+    text: "أعادوا ترتيب كاميرات المراقبة وربطوها مع الهاتف، جودة واضحة والمتابعة مستمرة.",
+  },
+];
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: BUSINESS_BRAND,
+  provider: {
+    "@type": "LocalBusiness",
+    name: BUSINESS_BRAND,
+    url: BASE_URL,
+    telephone: PHONE_NUMBER,
+    areaServed: SERVICE_AREAS,
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "خدمات الكويت المتكاملة",
+    itemListElement: services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.description,
+        areaServed: SERVICE_AREAS,
+        providerMobility: "dynamic",
+      },
+    })),
+  },
+  keywords: DEFAULT_KEYWORDS,
+};
+
+export const metadata: Metadata = {
+  title: "أفضل خدمات المنازل في الكويت | خدمات الكويت المتكاملة",
+  description:
+    "اطلب أفضل حلول تصليح وصيانة المنازل في الكويت: تركيب ستلايت و IPTV، ميكانيكي متنقل، صيانة أفران، وأنظمة مراقبة مع استجابة فورية وخدمة منازل محترفة.",
+  keywords: DEFAULT_KEYWORDS,
+  alternates: {
+    canonical: BASE_URL,
+  },
+  openGraph: {
+    title: "أفضل خدمات المنازل في الكويت",
+    description:
+      "خدمات الكويت المتكاملة توفر حلول تصليح وصيانة المنازل مع فرق متخصصة في الستلايت، الميكانيكا المتنقلة، صيانة الأفران، وكاميرات المراقبة.",
+    url: BASE_URL,
+    locale: "ar_KW",
+  },
+};
+
+export default function HomePage() {
+  return (
+    <div className="space-y-20 pb-20">
+      <JsonLd data={homeSchema} />
+
+      <section className="relative overflow-hidden bg-gradient-to-br from-kuwait-green/90 via-kuwait-green/80 to-kuwait-red/70 text-white">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" aria-hidden="true" />
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-20 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-xl space-y-6">
+            <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-widest text-white/90">
+              خدمات منزلية وصناعية في الكويت
+            </span>
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
+              {BUSINESS_NAME_AR}
+            </h1>
+            <p className="text-lg text-white/85">
+              نقدم حلولاً سريعة ومتكاملة للستلايت، الميكانيك المتنقل، صيانة الأفران، وأنظمة المراقبة بفرق محترفة تغطي كل مناطق الكويت.
+            </p>
+            <div className="grid gap-3">
+              {heroHighlights.map((highlight) => (
+                <div key={highlight} className="flex items-center gap-3 text-sm md:text-base">
+                  <CheckCircle2 className="h-5 w-5 text-white" aria-hidden="true" />
+                  <span>{highlight}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <LeadTrackedLink
+                href={`tel:${PHONE_NUMBER}`}
+                className="flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-kuwait-green shadow-lg transition hover:shadow-xl"
+                channel="phone"
+                source="home-hero-call"
+              >
+                <PhoneCall className="h-5 w-5" aria-hidden="true" />
+                <span dir="ltr">{FORMATTED_PHONE}</span>
+              </LeadTrackedLink>
+              <LeadTrackedLink
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب في طلب خدمة من Kuwait Service.")}`}
+                className="flex items-center justify-center gap-2 rounded-full border border-white/60 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                target="_blank"
+                rel="noopener noreferrer"
+                channel="whatsapp"
+                source="home-hero-whatsapp"
+              >
+                <ArrowLeftCircle className="h-5 w-5" aria-hidden="true" />
+                تواصل واتساب
+              </LeadTrackedLink>
+            </div>
+          </div>
+          <div className="grid gap-4 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-lg md:w-[340px]">
+            <h2 className="text-lg font-semibold text-white">نعمل في جميع مناطق الكويت</h2>
+            <div className="grid grid-cols-2 gap-3 text-sm text-white/85">
+              {SERVICE_AREAS.map((area) => (
+                <span key={area} className="rounded-full bg-white/10 px-3 py-2 text-center">
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl space-y-8 px-4">
+        <header className="flex flex-col gap-3 text-center">
+          <h2 className="section-title">خدماتنا الرئيسية</h2>
+          <p className="mx-auto max-w-2xl text-base text-kuwait-black/70">
+            حلول متخصصة تلائم المنازل والشركات في مناطق حولي، السالمية، الفروانية، والأحمدي مع التزام كامل بالجودة والسرعة.
+          </p>
+        </header>
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((service) => (
+            <div
+              key={service.slug}
+              className={`group relative overflow-hidden rounded-3xl border border-kuwait-black/10 bg-white p-6 shadow-lg transition hover:-translate-y-1 ${service.accent}`}
+            >
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-kuwait-black">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-kuwait-black/70">{service.description}</p>
+                <ul className="space-y-2 text-sm text-kuwait-black/80">
+                  {service.perks.map((perk) => (
+                    <li key={perk} className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-kuwait-green" aria-hidden="true" />
+                      {perk}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-kuwait-green transition group-hover:text-green-700"
+                >
+                  اكتشف المزيد
+                  <ArrowLeftCircle className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:flex-row md:items-center">
+          <div className="flex-1 space-y-4">
+            <h2 className="section-title">ليه تختار Kuwait Service؟</h2>
+            <p className="text-base text-kuwait-black/70">
+              فريقنا جاهز لدعمك في أي وقت مع ضمان جودة الأعمال وخدمة عملاء متواصلة عبر الهاتف والواتساب، بالإضافة إلى تغطية شاملة لمناطق الكويت بما فيها مبارك الكبير، الجابرية، والقرين.
+            </p>
+          </div>
+          <div className="flex-1 grid gap-4 sm:grid-cols-2">
+            {heroHighlights.map((item) => (
+              <div key={item} className="rounded-2xl border border-kuwait-green/30 bg-kuwait-green/5 p-4 text-sm text-kuwait-black/80">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl space-y-8 px-4">
+        <h2 className="section-title text-center">آراء عملائنا</h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.name} className="rounded-3xl border border-kuwait-black/10 bg-white p-6 shadow">
+              <p className="text-sm text-kuwait-black/80">“{testimonial.text}”</p>
+              <p className="mt-4 text-xs font-semibold text-kuwait-green">{testimonial.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl rounded-3xl bg-kuwait-red text-white shadow-glow">
+        <div className="flex flex-col gap-6 px-6 py-12 text-center">
+          <h2 className="text-3xl font-semibold">جاهزون لخدمتك الآن</h2>
+          <p className="mx-auto max-w-2xl text-base text-white/85">
+            تواصل معنا مباشرة عبر الهاتف أو الواتساب للتنسيق الفوري مع أقرب فريق لخدمتك.
+          </p>
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <LeadTrackedLink
+              href={`tel:${PHONE_NUMBER}`}
+              className="flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-kuwait-red transition hover:scale-105"
+              channel="phone"
+              source="home-cta-call"
+            >
+              <PhoneCall className="h-5 w-5" aria-hidden="true" />
+              <span dir="ltr">{FORMATTED_PHONE}</span>
+            </LeadTrackedLink>
+            <LeadTrackedLink
+              href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أحتاج خدمة عاجلة من Kuwait Service.")}`}
+              className="flex items-center justify-center gap-2 rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              target="_blank"
+              rel="noopener noreferrer"
+              channel="whatsapp"
+              source="home-cta-whatsapp"
+            >
+              <ArrowLeftCircle className="h-5 w-5" aria-hidden="true" />
+              رسالة واتساب فورية
+            </LeadTrackedLink>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
