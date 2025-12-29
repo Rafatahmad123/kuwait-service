@@ -101,13 +101,13 @@ export default function SatellitePage() {
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:flex-row md:items-center">
           <div className="flex-1 space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full bg-kuwait-green/10 px-4 py-1 text-sm font-medium text-kuwait-green">
-              🔧 تركيب وصيانة كاملة
+              🔧 فني ستلايت هندي محترف – خدمة مضمونة 24 ساعة
             </span>
             <h1 className="text-4xl font-bold text-kuwait-black">
-              خدمة الستلايت والـ IPTV المتكاملة في الكويت
+              فني ستلايت هندي في الكويت | تركيب ستلايت مركزي وصيانة رسيفرات
             </h1>
             <p className="text-base text-kuwait-black/70">
-              نوفر لك حلول الستلايت الحديثة مع ضبط الإشارة بأعلى دقة، برمجة القنوات، ودعم أجهزة IPTV المحدثة. فرقنا تغطي مناطق حولي، السالمية، الفروانية، الجهراء، وأكثر.
+              نقدم خدمة ستلايت منزلية ومركزية تشمل تركيب الأطباق، برمجة الرسيفر، تحديث أجهزة IPTV، وصيانة رسيفرات لجميع الماركات مع تغطية فورية لمناطق حولي، السالمية، الفروانية، الجابرية، صباح السالم، والعبدلي.
             </p>
             <ul className="space-y-3 text-sm text-kuwait-black/80">
               {packageFeatures.map((feature) => (
@@ -120,12 +120,12 @@ export default function SatellitePage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <LeadTrackedLink
                 href={`tel:${PHONE_NUMBER}`}
-                className="flex items-center justify-center gap-2 rounded-full bg-kuwait-green px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-green-700"
+                className="flex items-center justify-center gap-3 rounded-full bg-kuwait-green px-6 py-3 text-base font-semibold text-white shadow-md transition hover:scale-105 hover:bg-green-700"
                 channel="phone"
                 source="satellite-hero-call"
               >
                 <Tv className="h-5 w-5" aria-hidden="true" />
-                <span dir="ltr">{FORMATTED_PHONE}</span>
+                <span className="text-lg" dir="ltr">اتصل الآن: {FORMATTED_PHONE}</span>
               </LeadTrackedLink>
               <LeadTrackedLink
                 href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بخدمة الستلايت والـ IPTV من Kuwait Service.")}`}
