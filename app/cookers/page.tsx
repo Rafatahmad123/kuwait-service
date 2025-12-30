@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
@@ -11,6 +12,8 @@ import {
   SERVICE_AREAS,
   WHATSAPP_LINK,
 } from "@/lib/constants";
+import cookerHeroImage from "@/tbakhat/WhatsApp Image 2025-12-29 at 3.15.56 PM.jpeg";
+import cookerDetailImage from "@/tbakhat/photo_2025-12-29_15-14-32.jpg";
 
 const cookerSchema = {
   "@context": "https://schema.org",
@@ -138,6 +141,34 @@ export default function CookersPage() {
                 اطلب الخدمة عبر واتساب
               </LeadTrackedLink>
             </div>
+          </div>
+          <div className="flex-1 space-y-4">
+            <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
+              <Image
+                src={cookerHeroImage}
+                alt="فني تصليح أفران وطباخات في الكويت"
+                fill
+                className="object-cover"
+                loading="lazy"
+                placeholder="blur"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="sr-only">فني تصليح أفران وطباخات في الكويت ينجز صيانة سريعة داخل المنزل.</figcaption>
+            </figure>
+            <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
+              <Image
+                src={cookerDetailImage}
+                alt="فني تصليح أفران وطباخات في الكويت"
+                fill
+                className="rounded-2xl object-cover"
+                loading="lazy"
+                placeholder="blur"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="px-4 py-2 text-center text-xs text-kuwait-black/70">
+                تجهيز الطباخ بعد التنظيف العميق لضمان لهب متوازن وسلامة كاملة.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { BatteryCharging, Clock, PhoneCall, Wrench } from "lucide-react";
 
@@ -13,6 +14,8 @@ import {
   SERVICE_AREAS,
   WHATSAPP_LINK,
 } from "@/lib/constants";
+import roadsideRescue from "@/cars/WhatsApp Image 2025-12-29 at 3.11.53 PM.jpeg";
+import roadsideTools from "@/cars/WhatsApp Image 2025-12-29 at 3.11.53 PM (1).jpeg";
 
 const mobileMechanicSchema = {
   "@context": "https://schema.org",
@@ -137,6 +140,34 @@ export default function CarServicePage() {
                 اطلب الخدمة عبر واتساب
               </LeadTrackedLink>
             </div>
+          </div>
+          <div className="flex-1 space-y-4">
+            <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
+              <Image
+                src={roadsideRescue}
+                alt="خدمة بنشر وتصليح سيارات متنقل الكويت"
+                fill
+                className="object-cover"
+                loading="lazy"
+                placeholder="blur"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="sr-only">خدمة بنشر متنقل في الكويت أثناء إنقاذ سيارة على الطريق.</figcaption>
+            </figure>
+            <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-red/20 bg-white p-2 md:h-60">
+              <Image
+                src={roadsideTools}
+                alt="خدمة بنشر وتصليح سيارات متنقل الكويت"
+                fill
+                className="rounded-2xl object-cover"
+                loading="lazy"
+                placeholder="blur"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="px-4 py-2 text-center text-xs text-kuwait-black/70">
+                تجهيز معدات البنشر المتنقل لتبديل الإطارات والبطاريات بسرعة وأمان.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

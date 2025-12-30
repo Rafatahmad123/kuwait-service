@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowLeftCircle, CheckCircle2, Cloud, Tv, Wifi, Zap } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
@@ -12,6 +13,8 @@ import {
   SERVICE_AREAS,
   WHATSAPP_LINK,
 } from "@/lib/constants";
+import satelliteHero from "@/satlaet/WhatsApp Image 2025-12-29 at 3.07.20 PM.jpeg";
+import satelliteInstall from "@/satlaet/WhatsApp Image 2025-12-29 at 3.07.30 PM.jpeg";
 
 const satelliteSchema = {
   "@context": "https://schema.org",
@@ -140,7 +143,33 @@ export default function SatellitePage() {
               </LeadTrackedLink>
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 space-y-4">
+            <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
+              <Image
+                src={satelliteHero}
+                alt="فني ستلايت هندي كويتي خدمة 24 ساعة"
+                fill
+                className="object-cover"
+                placeholder="blur"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="sr-only">فني ستلايت هندي كويتي خدمة 24 ساعة أثناء ضبط طبق الستلايت.</figcaption>
+            </figure>
+            <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
+              <Image
+                src={satelliteInstall}
+                alt="فني ستلايت هندي كويتي خدمة 24 ساعة"
+                fill
+                className="rounded-2xl object-cover"
+                loading="lazy"
+                placeholder="blur"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <figcaption className="px-4 py-2 text-center text-xs text-kuwait-black/70">
+                تجهيز رسيفر واي فاي وتركيب وصيانة طبق الستلايت مع ضمان جودة الإشارة.
+              </figcaption>
+            </figure>
             <div className="relative overflow-hidden rounded-3xl border border-kuwait-green/20 bg-gradient-to-br from-kuwait-green/80 to-kuwait-red/70 p-8 text-white shadow-glow">
               <div className="space-y-4">
                 <h2 className="text-2xl font-semibold">باقات Premium IPTV</h2>
