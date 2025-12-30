@@ -14,8 +14,11 @@ import {
   SERVICE_AREAS,
   WHATSAPP_LINK,
 } from "@/lib/constants";
-import camerasHero from "@/camears/WhatsApp Image 2025-12-29 at 3.20.39 PM.jpeg";
-import camerasInstall from "@/camears/WhatsApp Image 2025-12-29 at 3.20.41 PM.jpeg";
+
+const CAMERAS_HERO_SRC = "/camears/WhatsApp Image 2025-12-29 at 3.20.39 PM.jpeg";
+const CAMERAS_INSTALL_SRC = "/camears/WhatsApp Image 2025-12-29 at 3.20.41 PM.jpeg";
+const CAMERAS_BLUR_PLACEHOLDER =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWP4TwQACfsD/Q9g6uYAAAAASUVORK5CYII=" as const;
 
 const camerasSchema = {
   "@context": "https://schema.org",
@@ -146,24 +149,26 @@ export default function CamerasPage() {
           <div className="flex-1 space-y-4">
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
-                src={camerasHero}
+                src={CAMERAS_HERO_SRC}
                 alt="تركيب وصيانة كاميرات مراقبة ذكية"
                 fill
                 className="object-cover"
                 loading="lazy"
                 placeholder="blur"
+                blurDataURL={CAMERAS_BLUR_PLACEHOLDER}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <figcaption className="sr-only">تركيب وصيانة كاميرات مراقبة ذكية في منزل بالكويت لضمان الحماية.</figcaption>
             </figure>
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
-                src={camerasInstall}
+                src={CAMERAS_INSTALL_SRC}
                 alt="تركيب وصيانة كاميرات مراقبة ذكية"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"
                 placeholder="blur"
+                blurDataURL={CAMERAS_BLUR_PLACEHOLDER}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <figcaption className="px-4 py-2 text-center text-xs text-kuwait-black/70">

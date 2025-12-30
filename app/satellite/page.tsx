@@ -13,8 +13,11 @@ import {
   SERVICE_AREAS,
   WHATSAPP_LINK,
 } from "@/lib/constants";
-import satelliteHero from "@/satlaet/WhatsApp Image 2025-12-29 at 3.07.20 PM.jpeg";
-import satelliteInstall from "@/satlaet/WhatsApp Image 2025-12-29 at 3.07.30 PM.jpeg";
+
+const SATELLITE_HERO_SRC = "/satlaet/WhatsApp Image 2025-12-29 at 3.07.20 PM.jpeg";
+const SATELLITE_INSTALL_SRC = "/satlaet/WhatsApp Image 2025-12-29 at 3.07.30 PM.jpeg";
+const SATELLITE_BLUR_PLACEHOLDER =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWP4TwQACfsD/Q9g6uYAAAAASUVORK5CYII=" as const;
 
 const satelliteSchema = {
   "@context": "https://schema.org",
@@ -146,24 +149,26 @@ export default function SatellitePage() {
           <div className="flex-1 space-y-4">
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
-                src={satelliteHero}
+                src={SATELLITE_HERO_SRC}
                 alt="فني ستلايت هندي كويتي خدمة 24 ساعة"
                 fill
                 className="object-cover"
                 placeholder="blur"
                 loading="lazy"
+                blurDataURL={SATELLITE_BLUR_PLACEHOLDER}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <figcaption className="sr-only">فني ستلايت هندي كويتي خدمة 24 ساعة أثناء ضبط طبق الستلايت.</figcaption>
             </figure>
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
-                src={satelliteInstall}
+                src={SATELLITE_INSTALL_SRC}
                 alt="فني ستلايت هندي كويتي خدمة 24 ساعة"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"
                 placeholder="blur"
+                blurDataURL={SATELLITE_BLUR_PLACEHOLDER}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <figcaption className="px-4 py-2 text-center text-xs text-kuwait-black/70">

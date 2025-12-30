@@ -14,8 +14,11 @@ import {
   SERVICE_AREAS,
   WHATSAPP_LINK,
 } from "@/lib/constants";
-import roadsideRescue from "@/cars/WhatsApp Image 2025-12-29 at 3.11.53 PM.jpeg";
-import roadsideTools from "@/cars/WhatsApp Image 2025-12-29 at 3.11.53 PM (1).jpeg";
+
+const CAR_SERVICE_HERO_SRC = "/cars/WhatsApp Image 2025-12-29 at 3.11.53 PM.jpeg";
+const CAR_SERVICE_TOOLS_SRC = "/cars/WhatsApp Image 2025-12-29 at 3.11.53 PM (1).jpeg";
+const CAR_SERVICE_BLUR_PLACEHOLDER =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWP4TwQACfsD/Q9g6uYAAAAASUVORK5CYII=" as const;
 
 const mobileMechanicSchema = {
   "@context": "https://schema.org",
@@ -144,24 +147,26 @@ export default function CarServicePage() {
           <div className="flex-1 space-y-4">
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
-                src={roadsideRescue}
+                src={CAR_SERVICE_HERO_SRC}
                 alt="خدمة بنشر وتصليح سيارات متنقل الكويت"
                 fill
                 className="object-cover"
                 loading="lazy"
                 placeholder="blur"
+                blurDataURL={CAR_SERVICE_BLUR_PLACEHOLDER}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <figcaption className="sr-only">خدمة بنشر متنقل في الكويت أثناء إنقاذ سيارة على الطريق.</figcaption>
             </figure>
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-red/20 bg-white p-2 md:h-60">
               <Image
-                src={roadsideTools}
+                src={CAR_SERVICE_TOOLS_SRC}
                 alt="خدمة بنشر وتصليح سيارات متنقل الكويت"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"
                 placeholder="blur"
+                blurDataURL={CAR_SERVICE_BLUR_PLACEHOLDER}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <figcaption className="px-4 py-2 text-center text-xs text-kuwait-black/70">
