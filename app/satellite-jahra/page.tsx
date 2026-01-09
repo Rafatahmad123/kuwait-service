@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowLeftCircle, CheckCircle2, MapPin, PhoneCall } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
@@ -106,16 +107,16 @@ export default function SatelliteJahraPage() {
             </div>
           </div>
           <div className="flex-1 space-y-4">
-            <div className="rounded-3xl border border-kuwait-green/20 bg-white p-6 shadow-lg">
-              <div className="flex flex-col items-center justify-center gap-4">
-                <div className="flex h-48 w-full items-center justify-center rounded-2xl bg-gradient-to-br from-kuwait-green to-kuwait-red/80 text-white">
-                  <span className="text-lg font-semibold">صورة توضيحية Placeholder</span>
-                </div>
-                <p className="text-center text-sm text-kuwait-black/70">
-                  نستبدل هذه الصورة لاحقاً بصور حقيقية لتركيب الستلايت في الجهراء.
-                </p>
-              </div>
-            </div>
+            <figure className="relative h-64 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white shadow-lg">
+              <Image
+                src="/images/satellite-hero.jpg"
+                alt="فني ستلايت الجهراء يعمل على تركيب رسيفر"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </figure>
             <div className="rounded-3xl border border-kuwait-green/20 bg-kuwait-green/5 p-6 text-sm text-kuwait-black/80">
               <h2 className="mb-3 flex items-center justify-end gap-2 text-base font-semibold text-kuwait-green">
                 <span>نخدم أسرع مناطق الجهراء</span>
