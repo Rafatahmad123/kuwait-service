@@ -180,19 +180,61 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     نقدم خدمات الستلايت، بنشر متنقل، صيانة أفران، وكاميرات مراقبة بأعلى جودة في الكويت. فريقنا متاح 24/7 لخدمتكم.
                   </p>
                 </div>
-                <div>
-                  <h3 className="mb-3 text-sm font-semibold text-kuwait-black/80">
-                    المناطق المشمولة بالخدمة
-                  </h3>
-                  <ul className="grid grid-cols-2 gap-2 text-sm text-kuwait-black/70 sm:grid-cols-3">
-                    {SERVICE_AREAS.slice(0, 9).map((area) => (
-                      <li key={area} className="flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-kuwait-red" aria-hidden="true" />
-                        {area}
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold text-kuwait-black/80">
+                      المناطق المشمولة بالخدمة
+                    </h3>
+                    <ul className="grid grid-cols-2 gap-2 text-sm text-kuwait-black/70 sm:grid-cols-3">
+                      {SERVICE_AREAS.slice(0, 9).map((area) => (
+                        <li key={area} className="flex items-center gap-2">
+                          <span className="h-1.5 w-1.5 rounded-full bg-kuwait-red" aria-hidden="true" />
+                          {area}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="mb-3 text-sm font-semibold text-kuwait-black/80">
+                      خدماتنا في الجهراء
+                    </h3>
+                    <ul className="space-y-2 text-sm text-kuwait-black/70">
+                      <li>
+                        <Link
+                          href={"/satellite-jahra" as Route}
+                          className="transition hover:text-kuwait-green"
+                        >
+                          فني ستلايت الجهراء
+                        </Link>
                       </li>
-                    ))}
-                  </ul>
+                      <li>
+                        <Link
+                          href={"/car-service-jahra" as Route}
+                          className="transition hover:text-kuwait-green"
+                        >
+                          كراج متنقل الجهراء
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={"/cameras-jahra" as Route}
+                          className="transition hover:text-kuwait-green"
+                        >
+                          تركيب كاميرات الجهراء
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={"/cookers-jahra" as Route}
+                          className="transition hover:text-kuwait-green"
+                        >
+                          تصليح طباخات الجهراء
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+
                 <div className="space-y-3 text-sm text-kuwait-black/70">
                   <p className="font-semibold text-kuwait-black">اتصل بنا الآن</p>
                   <LeadTrackedLink

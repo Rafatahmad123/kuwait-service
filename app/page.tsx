@@ -21,6 +21,33 @@ const heroHighlights = [
   "ضمان على جميع الأعمال وقطع الغيار الأصلية",
 ];
 
+const jahraServices: { href: Route; title: string; description: string }[] = [
+  {
+    href: "/satellite-jahra" as Route,
+    title: "فني ستلايت الجهراء",
+    description:
+      "تركيب وضبط ستلايت IPTV مع استجابة فورية لمناطق سعد العبدالله والنسيم والعيون.",
+  },
+  {
+    href: "/car-service-jahra" as Route,
+    title: "كراج متنقل الجهراء",
+    description:
+      "خدمة بنشر متنقل وميكانيكي طوارئ تغطي القصر وتيماء والواحة خلال 30 دقيقة.",
+  },
+  {
+    href: "/cameras-jahra" as Route,
+    title: "تركيب كاميرات الجهراء",
+    description:
+      "كاميرات مراقبة عالية الدقة للمنازل والمتاجر في سعد العبدالله والنسيم والواحة.",
+  },
+  {
+    href: "/cookers-jahra" as Route,
+    title: "تصليح طباخات الجهراء",
+    description:
+      "صيانة طباخات وأفران منزلية مع فحص شامل داخل تيماء والقصر والعيون.",
+  },
+];
+
 type ServiceCard = {
   slug: string;
   href: Route;
@@ -113,17 +140,25 @@ const homeSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "أفضل خدمات المنازل في الكويت | خدمات الكويت المتكاملة",
+  title:
+    "فني ستلايت، كراج متنقل، تصليح طباخات، كاميرات مراقبة في الكويت | خدمات الكويت المتكاملة",
   description:
-    "اطلب أفضل حلول تصليح وصيانة المنازل في الكويت: تركيب ستلايت و IPTV، ميكانيكي متنقل، صيانة أفران، وأنظمة مراقبة مع استجابة فورية وخدمة منازل محترفة.",
-  keywords: DEFAULT_KEYWORDS,
+    "خدمات الكويت المتكاملة توفر فني ستلايت محترف، كراج متنقل سريع، تصليح طباخات متكامل، وتركيب كاميرات مراقبة حديثة في الكويت مع استجابة فورية لجميع المناطق.",
+  keywords: [
+    ...DEFAULT_KEYWORDS,
+    "فني ستلايت الكويت",
+    "كراج متنقل الكويت",
+    "تصليح طباخات الكويت",
+    "كاميرات مراقبة الكويت",
+  ],
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: "أفضل خدمات المنازل في الكويت",
+    title:
+      "فني ستلايت، كراج متنقل، تصليح طباخات، كاميرات مراقبة في الكويت",
     description:
-      "خدمات الكويت المتكاملة توفر حلول تصليح وصيانة المنازل مع فرق متخصصة في الستلايت، الميكانيكا المتنقلة، صيانة الأفران، وكاميرات المراقبة.",
+      "فريق متخصص يقدم فني ستلايت، كراج متنقل، تصليح طباخات، وكاميرات مراقبة بخدمة 24 ساعة تغطي الكويت بالكامل.",
     url: BASE_URL,
     locale: "ar_KW",
   },
@@ -188,6 +223,35 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl space-y-8 px-4">
+        <header className="flex flex-col gap-3 text-center">
+          <h2 className="section-title">خدماتنا في الجهراء</h2>
+          <p className="mx-auto max-w-2xl text-base text-kuwait-black/70">
+            فرقنا الميدانية جاهزة لدعمكم في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة مع حلول متخصصة لكل خدمة.
+          </p>
+        </header>
+        <div className="grid gap-6 md:grid-cols-2">
+          {jahraServices.map((service) => (
+            <div
+              key={service.href}
+              className="group relative overflow-hidden rounded-3xl border border-kuwait-black/10 bg-white p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="space-y-4 text-right">
+                <h3 className="text-xl font-semibold text-kuwait-black">{service.title}</h3>
+                <p className="text-sm text-kuwait-black/70">{service.description}</p>
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-kuwait-green transition group-hover:text-green-700"
+                >
+                  تعرف على الخدمة
+                  <ArrowLeftCircle className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
