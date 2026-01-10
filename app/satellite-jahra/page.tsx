@@ -70,20 +70,34 @@ export default function SatelliteJahraPage() {
               فني ستلايت الجهراء
             </span>
             <h1 className="text-4xl font-bold text-kuwait-black">
-              فني ستلايت الجهراء | ضبط استقبال HD لجميع مناطق المحافظة
+              فني ستلايت الجهراء | تركيب وتصليح وصيانة 24 ساعة
             </h1>
             <p className="text-base text-kuwait-black/70">
-              فرقنا الميدانية تغطي سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة مع تجهيزات كاملة لضبط الإشارة، تركيب أطباق الستلايت، وتفعيل أجهزة IPTV الحديثة بدون انقطاع.
+              هل تبحث عن فني ستلايت شاطر في الجهراء؟ نحن نوفر لك نخبة من الفنيين المتخصصين (فني ستلايت هندي وباكستاني) لخدمة جميع مناطق الجهراء (النسيم، تيماء، الواحة، العيون، والقصر). نصلك خلال دقائق بأسعار تنافسية وكفالة حقيقية.
             </p>
             <ul className="space-y-3 text-sm text-kuwait-black/80">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-center justify-end gap-3">
-                  <span>{feature}</span>
+              {[
+                "تركيب ستلايت مركزي للقسائم والعمارات.",
+                "برمجة وتجديد اشتراك بي إن سبورت (BeIN Sports).",
+                "تصليح وصيانة الرسيفرات وتركيب ستاندات التلفزيون.",
+                "تمديد وايرات الستلايت الأصلية والمقاومة للشمس.",
+              ].map((service) => (
+                <li key={service} className="flex items-center justify-end gap-3">
+                  <span>{service}</span>
                   <CheckCircle2 className="h-5 w-5 text-kuwait-green" aria-hidden="true" />
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+              <LeadTrackedLink
+                href={`tel:00965662471661`}
+                className="flex items-center justify-center gap-2 rounded-full bg-kuwait-green px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-green-700"
+                channel="phone"
+                source="satellite-jahra-primary-call"
+              >
+                <PhoneCall className="h-5 w-5" aria-hidden="true" />
+                اتصل الآن بـ فني ستلايت الجهراء: 00965662471661
+              </LeadTrackedLink>
               <LeadTrackedLink
                 href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بخدمة فني ستلايت الجهراء من Kuwait Service.")}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-green/40 px-5 py-3 text-sm font-semibold text-kuwait-green transition hover:bg-kuwait-green/10"
@@ -94,15 +108,6 @@ export default function SatelliteJahraPage() {
               >
                 <ArrowLeftCircle className="h-5 w-5" aria-hidden="true" />
                 تواصل واتساب
-              </LeadTrackedLink>
-              <LeadTrackedLink
-                href={`tel:${PHONE_NUMBER}`}
-                className="flex items-center justify-center gap-2 rounded-full bg-kuwait-green px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-green-700"
-                channel="phone"
-                source="satellite-jahra-call"
-              >
-                <PhoneCall className="h-5 w-5" aria-hidden="true" />
-                <span dir="ltr">{FORMATTED_PHONE}</span>
               </LeadTrackedLink>
             </div>
           </div>
