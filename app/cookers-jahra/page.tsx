@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowLeftCircle, CheckCircle2, Flame, MapPin, PhoneCall } from "lucide-react";
+import { ArrowLeftCircle, CheckCircle2, MapPin, PhoneCall } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
-import { BASE_URL, FORMATTED_PHONE, PHONE_NUMBER, WHATSAPP_LINK } from "@/lib/constants";
+import { BASE_URL, WHATSAPP_LINK } from "@/lib/constants";
 
-const neighborhoods = ["سعد العبدالله", "النسيم", "العيون", "القصر", "تيماء", "الواحة"];
+const COOKER_PHONE = "51222091";
+const COOKER_PHONE_FULL = "+96551222091";
+const neighborhoods = ["الجهراء", "الصليبية", "النعيم"];
 
 const services = [
-  "صيانة شاملة للطباخات والأفران المنزلية والتجارية",
-  "تبديل البواجي وحساسات الحرارة وضبط اللهب",
-  "تنظيف عميق للهودات ومجاري الشفط في منازل الجهراء",
-  "توفير قطع غيار أصلية مع ضمان لمدة 6 أشهر",
+  "فني تصليح طباخات هندي وباكستاني بخبرة تتجاوز 15 سنة في الكويت",
+  "تنظيف أفران عميق يشمل إزالة الدهون وفحص أنظمة الأمان",
+  "تبديل فالات وجام للطباخات مع ضبط اللهب وحرارة الفرن",
+  "تصليح غسالات أوتوماتيك ونشافات داخل منازل وبيوت الجهراء",
 ];
 
 const schema = {
@@ -22,7 +24,7 @@ const schema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Kuwait Service",
-    telephone: PHONE_NUMBER,
+    telephone: COOKER_PHONE_FULL,
     areaServed: neighborhoods,
     url: `${BASE_URL}/cookers-jahra`,
   },
@@ -34,15 +36,15 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: "تصليح طباخات الجهراء | صيانة أفران سعد العبدالله والنسيم",
+  title: "تصليح طباخات الجهراء | صيانة أفران وغسالات بالمنزل",
   description:
-    "تصليح طباخات الجهراء من Kuwait Service يشمل صيانة الأفران وتنظيف الهودات وتبديل القطع الأصلية في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة.",
+    "تصليح طباخات الجهراء يوفر فني هندي وباكستاني لتنظيف الأفران، تبديل فالات وجام، وتصليح غسالات أوتوماتيك ونشافات في الجهراء، الصليبية، والنعيم.",
   keywords: [
     "تصليح طباخات الجهراء",
-    "صيانة أفران سعد العبدالله",
-    "تنظيف هودات النسيم",
-    "تصليح طباخات الكويت",
-    "فني طباخات الجهراء",
+    "فني طباخات هندي الجهراء",
+    "تنظيف أفران الجهراء",
+    "تبديل فالات وجام الجهراء",
+    "تصليح غسالات الصليبية",
   ],
   alternates: {
     canonical: `${BASE_URL}/cookers-jahra`,
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "تصليح طباخات الجهراء",
     description:
-      "فنيون متخصصون في صيانة الطباخات والأفران وتنظيف الهودات في محافظة الجهراء مع تغطية سعد العبدالله والنسيم وتيماء.",
+      "أفضل فني تصليح طباخات في الجهراء والصليبية والنعيم لتنظيف الأفران، تبديل فالات وجام، وتصليح الغسالات والنشافات داخل المنزل.",
     url: `${BASE_URL}/cookers-jahra`,
     locale: "ar_KW",
   },
@@ -68,10 +70,13 @@ export default function CookersJahraPage() {
               تصليح طباخات الجهراء
             </span>
             <h1 className="text-4xl font-bold text-kuwait-black">
-              تصليح طباخات وأفران الجهراء | خدمة فورية لكل مناطق المحافظة
+              تصليح طباخات الجهراء | صيانة أفران وغسالات بالمنزل
             </h1>
             <p className="text-base text-kuwait-black/70">
-              ندعم سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة بفنيين متخصصين في صيانة الطباخات والأفران وتنظيف الهودات مع فحص احترافي وضمان بعد الصيانة.
+              أفضل فني تصليح طباخات بالجهراء (هندي وباكستاني) يصل إلى منازلكم في جميع مناطق المحافظة خلال وقت قياسي مع خدمة صيانة محترفة ومعدات أصلية.
+            </p>
+            <p className="text-base text-kuwait-black/70">
+              نقدم صيانة شاملة تشمل تنظيف الأفران، تبديل فالات وجام، وتصليح غسالات أوتوماتيك ونشافات مع تغطية كاملة للجهراء والصليبية والنعيم ضمن زيارات منزلية موثوقة.
             </p>
             <ul className="space-y-3 text-sm text-kuwait-black/80">
               {services.map((item) => (
@@ -94,13 +99,13 @@ export default function CookersJahraPage() {
                 تواصل واتساب
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`tel:${PHONE_NUMBER}`}
+                href={`tel:${COOKER_PHONE}`}
                 className="flex items-center justify-center gap-2 rounded-full bg-kuwait-green px-6 py-3 text-base font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-green-700"
                 channel="phone"
                 source="cookers-jahra-call"
               >
                 <PhoneCall className="h-5 w-5" aria-hidden="true" />
-                <span dir="ltr">{FORMATTED_PHONE}</span>
+                <span>طلب فني طباخات: {COOKER_PHONE}</span>
               </LeadTrackedLink>
             </div>
           </div>
@@ -135,7 +140,7 @@ export default function CookersJahraPage() {
       <section className="mx-auto w-full max-w-6xl space-y-6 px-4">
         <h2 className="text-2xl font-semibold text-kuwait-black">خدمة صيانة طباخات الجهراء</h2>
         <p className="text-sm text-kuwait-black/70">
-          نقدم حلول صيانة دقيقة للطباخات والأفران لتأمين أداء مستقر داخل المنازل والمطاعم في سعد العبدالله، النسيم، القصر، تيماء، والواحة مع ضمان قطع الغيار الرسمية.
+          نمتلك خبرة واسعة في تنظيف الأفران وتبديل فالات وجام وتصليح الغسالات والنشافات داخل منازل الجهراء والصليبية والنعيم مع توفير قطع غيار أصلية وضمان مكتوب.
         </p>
       </section>
     </div>
