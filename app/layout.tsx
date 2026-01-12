@@ -35,6 +35,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/mobile-mechanic" as Route, label: "بنشر متنقل" },
   { href: "/oven-repair" as Route, label: "تصليح طباخات" },
   { href: "/cctv" as Route, label: "كاميرات مراقبة" },
+  { href: "/software-engineering" as Route, label: "برمجة وتطوير مواقع" },
 ];
 
 const globalBusinessSchema = {

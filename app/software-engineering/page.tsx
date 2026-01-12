@@ -39,7 +39,7 @@ const projects = [
 const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "المهندس رأفت منصور أحمد",
+  name: "المهندس رأفت منصور الشنور",
   image: "https://kuwait-service.com/rafat-1.jpg",
   areaServed: ["SA", "AE", "KW"],
   knowsAbout: ["AI Systems", "Software Engineering", "AR", "SEO", "Web Development"],
@@ -54,7 +54,7 @@ const professionalServiceSchema = {
   },
   provider: {
     "@type": "Person",
-    name: "م. رأفت منصور أحمد",
+    name: "م. رأفت منصور الشنور",
     jobTitle: "مهندس برمجيات وخبير حلول ذكاء اصطناعي",
     alumniOf: "جامعة حلب - هندسة المعلوماتية",
   },
@@ -67,14 +67,14 @@ const professionalServiceSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "مهندس برمجيات وخبير حلول ذكاء اصطناعي | م. رأفت منصور أحمد",
+  title: "مهندس برمجيات وخبير حلول ذكاء اصطناعي | م. رأفت منصور الشنور",
   description:
-    "م. رأفت منصور أحمد يقدم حلول ذكاء اصطناعي، تطوير منصات SaaS، وتحسين محركات البحث للشركات في السعودية، الإمارات، والكويت.",
+    "م. رأفت منصور الشنور يقدم حلول ذكاء اصطناعي، تطوير منصات SaaS، وتحسين محركات البحث للشركات في السعودية، الإمارات، والكويت.",
   alternates: {
     canonical: "https://kuwait-service.com/software-engineering",
   },
   openGraph: {
-    title: "مهندس برمجيات وخبير حلول ذكاء اصطناعي | م. رأفت منصور أحمد",
+    title: "مهندس برمجيات وخبير حلول ذكاء اصطناعي | م. رأفت منصور الشنور",
     description:
       "استشارات برمجية متقدمة، دمج تقنيات الذكاء الاصطناعي، واستراتيجيات SEO عالية التأثير في الخليج.",
     url: "https://kuwait-service.com/software-engineering",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
         url: "https://kuwait-service.com/rafat-3.jpg",
         width: 1200,
         height: 630,
-        alt: "المهندس رأفت منصور أحمد - حلول ذكاء اصطناعي وبرمجيات متكاملة",
+        alt: "المهندس رأفت منصور الشنور - حلول ذكاء اصطناعي وبرمجيات متكاملة",
       },
     ],
   },
@@ -113,7 +113,7 @@ export default function SoftwareEngineeringPage() {
             </span>
             <div className="space-y-4">
               <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
-                مهندس برمجيات وخبير حلول ذكاء اصطناعي | م. رأفت منصور أحمد.
+                مهندس برمجيات وخبير حلول ذكاء اصطناعي | م. رأفت منصور الشنور.
               </h1>
               <p className="text-lg text-white/70 md:text-xl">
                 متخصص في تطوير الأنظمة الذكية، الحلول البرمجية للمؤسسات، وتحسين محركات البحث في السعودية، الإمارات، والكويت.
@@ -154,7 +154,7 @@ export default function SoftwareEngineeringPage() {
               <div className="grid gap-2 p-2">
                 <Image
                   src="/rafat-3.jpg"
-                  alt="المهندس رأفت منصور أحمد خلال عرض مشروع"
+                  alt="المهندس رأفت منصور الشنور خلال عرض مشروع"
                   width={720}
                   height={480}
                   className="h-64 w-full rounded-3xl object-cover"
@@ -244,12 +244,12 @@ export default function SoftwareEngineeringPage() {
               <div className="relative flex flex-col gap-6 text-right">
                 <div className="flex items-center justify-end gap-4">
                   <div className="space-y-1">
-                    <h3 className="text-2xl font-semibold text-white">المهندس رأفت منصور أحمد</h3>
+                    <h3 className="text-2xl font-semibold text-white">المهندس رأفت منصور الشنور</h3>
                     <p className="text-sm text-cyan-300">Founder & Lead Engineer</p>
                   </div>
                   <Image
                     src="/rafat-1.jpg"
-                    alt="المهندس رأفت منصور أحمد"
+                    alt="المهندس رأفت منصور الشنور"
                     width={120}
                     height={120}
                     className="h-24 w-24 rounded-3xl border border-white/20 object-cover"
