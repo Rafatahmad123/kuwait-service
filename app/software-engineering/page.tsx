@@ -269,7 +269,7 @@ export default function SoftwareEngineeringPage() {
           aria-labelledby="hero"
           style={{ animationDelay: "0.05s" }}
         >
-          <div className="space-y-12 text-right">
+          <div className="order-2 space-y-12 text-right lg:order-1">
             <div className="space-y-6">
               <span
                 className={`${inter.className} inline-flex items-center justify-center rounded-full border border-slate-800/70 bg-white/5 px-5 py-1 text-[10px] uppercase tracking-[0.5em] text-slate-300/90`}
@@ -345,11 +345,11 @@ export default function SoftwareEngineeringPage() {
             </ul>
           </div>
 
-          <div className="relative mx-auto w-full max-w-sm md:max-w-md">
+          <div className="relative order-1 mx-auto flex w-full max-w-xs justify-center sm:max-w-sm md:max-w-md lg:order-2">
             <div className="absolute inset-0 scale-110 rounded-[40px] border border-slate-800/60 bg-[radial-gradient(circle,_rgba(37,99,235,0.2),_transparent_70%)] blur-3xl" />
-            <div className="relative rounded-[40px] border border-slate-800/70 bg-white/5 p-6 backdrop-blur-2xl">
+            <div className="relative flex w-full items-center justify-center rounded-[40px] border border-slate-800/70 bg-white/5 p-6 backdrop-blur-2xl">
               <div
-                className="overflow-hidden border border-slate-700/60 shadow-[0_28px_80px_rgba(15,23,42,0.45)]"
+                className="flex min-h-[260px] w-full items-center justify-center overflow-hidden border border-slate-700/60 shadow-[0_28px_80px_rgba(15,23,42,0.45)]"
                 style={{ clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)" }}
               >
                 <Image
@@ -357,7 +357,7 @@ export default function SoftwareEngineeringPage() {
                   alt="المهندس رأفت منصور الشنور"
                   width={640}
                   height={720}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full min-h-[260px] object-cover"
                   priority
                 />
               </div>
@@ -413,7 +413,7 @@ export default function SoftwareEngineeringPage() {
               باقات تنفيذية تغطي التحليل، التصميم، والتطبيق مع ضمان حوكمة هندسية كاملة عبر كل مرحلة.
             </p>
           </header>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
               <article
                 key={service.en}
@@ -455,7 +455,7 @@ export default function SoftwareEngineeringPage() {
             </p>
           </header>
           <article className="grid gap-8 rounded-[36px] border border-slate-800/60 bg-white/[0.05] p-8 backdrop-blur-xl lg:grid-cols-[1.35fr_0.9fr]">
-            <div className="relative overflow-hidden rounded-[32px] border border-slate-800/60 bg-black/40">
+            <div className="relative min-h-[260px] overflow-hidden rounded-[32px] border border-slate-800/60 bg-black/40">
               <Image
                 src={featuredProject.primaryImage}
                 alt={featuredProject.title}
@@ -491,7 +491,7 @@ export default function SoftwareEngineeringPage() {
                   </div>
                 ))}
               </div>
-              <div className="relative w-full overflow-hidden rounded-[24px] border border-slate-800/60 bg-black/40">
+              <div className="relative w-full overflow-hidden rounded-[24px] border border-slate-800/60 bg-black/40 min-h-[220px]">
                 <Image
                   src={featuredProject.featureImage}
                   alt="ميزات المنصة"
@@ -517,13 +517,13 @@ export default function SoftwareEngineeringPage() {
               حلول تنفيذية مصممة لإعادة تشكيل الخبرات التعليمية والتشغيلية عبر مؤسسات الخليج.
             </p>
           </header>
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
             {caseStudies.map((study) => (
               <article
                 key={study.en}
                 className="flex h-full flex-col overflow-hidden rounded-[28px] border border-slate-800/60 bg-white/[0.05] backdrop-blur-xl"
               >
-                <div className="overflow-hidden border-b border-slate-800/60">
+                <div className="overflow-hidden border-b border-slate-800/60 min-h-[220px]">
                   <Image
                     src={study.image}
                     alt={study.en}
