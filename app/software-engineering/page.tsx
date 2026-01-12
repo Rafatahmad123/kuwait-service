@@ -3,10 +3,10 @@ import Image from "next/image";
 
 import JsonLd from "@/components/JsonLd";
 
-const WHATSAPP_NUMBER = "963936457500";
+const WHATSAPP_NUMBER = "963943787112";
 const WHATSAPP_MESSAGE = "مرحباً بشمهندس رأفت، أريد حجز استشارة برمجية بخصوص مشروع...";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-const WHATSAPP_DISPLAY = "+963 936 457 500";
+const WHATSAPP_DISPLAY = "+963 943 787 112";
 const DIRECT_CALL_KW = "51222091";
 const DIRECT_CALL_DISPLAY = "+965 5122 2091";
 
@@ -152,6 +152,7 @@ export default function SoftwareEngineeringPage() {
                   height={480}
                   className="h-64 w-full rounded-[28px] object-cover transition-transform duration-700 ease-out hover:scale-105"
                   priority
+                  style={{ animation: "floatCard 9s ease-in-out infinite" }}
                 />
                 <div className="grid gap-3 rounded-[28px] border border-white/10 bg-white/6 p-6 text-right">
                   <p className="text-sm text-white/70">
@@ -399,6 +400,18 @@ export default function SoftwareEngineeringPage() {
         </section>
       </main>
       <style jsx global>{`
+        @keyframes floatCard {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-12px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+
         body:has(main [data-page="software-engineering"]) .header-call-cta {
           display: none !important;
         }
