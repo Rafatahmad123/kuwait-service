@@ -6,7 +6,9 @@ import JsonLd from "@/components/JsonLd";
 const WHATSAPP_NUMBER = "963936457500";
 const WHATSAPP_MESSAGE = "مرحباً بشمهندس رأفت، أريد حجز استشارة برمجية بخصوص مشروع...";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const WHATSAPP_DISPLAY = "+963 936 457 500";
 const DIRECT_CALL_KW = "51222091";
+const DIRECT_CALL_DISPLAY = "+965 5122 2091";
 
 const heroHighlights = [
   "دمج حلول الذكاء الاصطناعي مع بنية تحتية سحابية آمنة",
@@ -96,76 +98,67 @@ export const metadata: Metadata = {
 
 export default function SoftwareEngineeringPage() {
   return (
-    <div className="relative overflow-hidden bg-[#040314] text-white">
-      <div className="pointer-events-none absolute inset-0 opacity-60" aria-hidden="true">
-        <div className="absolute -top-20 left-1/2 h-[580px] w-[580px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,_rgba(0,198,255,0.35),_transparent_60%)]" />
-        <div className="absolute bottom-0 right-0 h-[420px] w-[420px] translate-x-1/3 translate-y-1/4 rounded-full bg-[radial-gradient(circle_at_center,_rgba(123,31,162,0.4),_transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_40%,rgba(255,255,255,0.04))]" />
-      </div>
-
+    <div
+      data-page="software-engineering"
+      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#101625] via-[#0d1422] to-[#0b111d] text-white"
+    >
       <JsonLd data={professionalServiceSchema} />
 
-      <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-24 px-4 pb-24 pt-24 md:px-8">
-        <section className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-          <div className="space-y-8 text-right">
-            <span className="inline-flex items-center justify-end gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold tracking-[0.35em] text-white/70">
-              CYBERPEDIA MODE
-            </span>
-            <div className="space-y-4">
+      <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-24 px-5 pb-28 pt-24 md:px-12">
+        <section className="grid gap-14 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+          <div className="space-y-10 text-right">
+            <div className="space-y-6">
               <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
                 مهندس برمجيات وخبير حلول ذكاء اصطناعي | م. رأفت منصور الشنور.
               </h1>
-              <p className="text-lg text-white/70 md:text-xl">
+              <p className="text-sm font-medium text-cyan-200/80">
+                رائد ابتكار في أنظمة الذكاء الاصطناعي والواقع المعزز - مطور مشروع النظارات الذكية
+              </p>
+              <p className="text-lg text-white/75 md:text-xl">
                 متخصص في تطوير الأنظمة الذكية، الحلول البرمجية للمؤسسات، وتحسين محركات البحث في السعودية، الإمارات، والكويت.
               </p>
             </div>
-            <ul className="grid gap-3 text-sm text-white/70 sm:grid-cols-1">
+            <ul className="grid gap-4 text-sm text-white/70 sm:grid-cols-1">
               {heroHighlights.map((highlight) => (
                 <li
                   key={highlight}
-                  className="flex items-center justify-end gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-right"
+                  className="flex items-center justify-end gap-3 rounded-2xl border border-white/10 bg-white/8 px-6 py-4 text-right"
                 >
-                  <span className="h-2 w-2 rounded-full bg-cyan-400" aria-hidden="true" />
+                  <span className="h-2 w-2 rounded-full bg-cyan-300" aria-hidden="true" />
                   <span>{highlight}</span>
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:justify-end">
+            <div className="flex justify-end pt-2">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-[#040314] shadow-[0_20px_45px_rgba(0,205,255,0.35)] transition hover:scale-105 hover:bg-cyan-400"
+                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-l from-cyan-400 via-emerald-300 to-cyan-400 px-7 py-3 text-sm font-semibold text-[#041021] shadow-[0_18px_36px_rgba(11,168,255,0.28)] transition-all duration-500 hover:translate-x-1 hover:shadow-[0_20px_40px_rgba(11,168,255,0.35)]"
+                aria-label="حجز استشارة برمجية عبر واتساب"
               >
-                <span>احجز استشارة مجانية</span>
-                <span className="-scale-x-100 transition-transform group-hover:translate-x-1">➜</span>
-              </a>
-              <a
-                href="#projects"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
-              >
-                عرض الأعمال
+                <span>استشارة واتساب برمجية</span>
+                <span className="-scale-x-100 transition-transform duration-500 group-hover:translate-x-1">➜</span>
               </a>
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-6 rounded-[32px] border border-white/5 bg-[radial-gradient(circle_at_top,_rgba(0,198,255,0.25),transparent_60%)] blur-2xl" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-lg">
-              <div className="grid gap-2 p-2">
+            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/8 p-4 backdrop-blur">
+              <div className="grid gap-4">
                 <Image
                   src="/rafat-3.jpg"
                   alt="المهندس رأفت منصور الشنور خلال عرض مشروع"
                   width={720}
                   height={480}
-                  className="h-64 w-full rounded-3xl object-cover"
+                  className="h-64 w-full rounded-[28px] object-cover transition-transform duration-700 ease-out hover:scale-105"
                   priority
                 />
-                <div className="grid gap-2 rounded-3xl bg-white/5 p-4 text-right">
-                  <p className="text-sm text-white/60">
+                <div className="grid gap-3 rounded-[28px] border border-white/10 bg-white/6 p-6 text-right">
+                  <p className="text-sm text-white/70">
                     أنظمة الذكاء الاصطناعي المدمجة مع حساسات الواقع المعزز تمنح فرق العمل قرارات أسرع بنسبة 45%.
                   </p>
-                  <div className="flex items-center justify-end gap-2 text-xs text-white/50">
-                    <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+                  <div className="flex items-center justify-end gap-2 text-xs text-white/60">
+                    <span className="inline-flex h-2 w-2 rounded-full bg-emerald-300" aria-hidden="true" />
                     <span>Live Prototype Feed</span>
                   </div>
                 </div>
@@ -200,7 +193,7 @@ export default function SoftwareEngineeringPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:bg-white/10"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/6 p-8 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-white/10"
               >
                 <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[radial-gradient(circle_at_center,_rgba(0,198,255,0.22),_transparent_70%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true" />
                 <h3 className="text-xl font-semibold text-white">{item.title}</h3>
@@ -219,7 +212,7 @@ export default function SoftwareEngineeringPage() {
               حلول مصممة بدقة للشركات التي تبحث عن استفادة ناجزة من الذكاء الاصطناعي والتوسع الرقمي.
             </p>
           </header>
-          <div className="grid gap-4 rounded-[30px] border border-white/10 bg-white/5 p-8 backdrop-blur-md">
+          <div className="grid gap-4 rounded-[30px] border border-white/10 bg-white/6 p-9 backdrop-blur-md">
             {services.map((service) => (
               <div key={service} className="flex items-center justify-end gap-3 text-right text-base text-white/70">
                 <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
@@ -229,8 +222,8 @@ export default function SoftwareEngineeringPage() {
           </div>
         </section>
 
-        <section aria-labelledby="team" className="space-y-8">
-          <header className="space-y-3 text-right">
+        <section aria-labelledby="team" className="space-y-10">
+          <header className="space-y-4 text-right">
             <h2 id="team" className="text-3xl font-semibold text-white">
               المهندسون
             </h2>
@@ -238,10 +231,10 @@ export default function SoftwareEngineeringPage() {
               فريق هندسي صغير بقدرات كبيرة، يجمع بين الرؤية الأكاديمية والتنفيذ التشغيلي السريع.
             </p>
           </header>
-          <div className="grid gap-6 md:grid-cols-2">
-            <article className="relative overflow-hidden rounded-[32px] border border-white/15 bg-white/10 p-8 backdrop-blur-xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(0,198,255,0.18),_transparent_65%)]" aria-hidden="true" />
-              <div className="relative flex flex-col gap-6 text-right">
+          <div className="grid gap-8 md:grid-cols-2">
+            <article className="relative overflow-hidden rounded-[36px] border border-white/12 bg-white/8 p-9 backdrop-blur-xl">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(0,198,255,0.12),_transparent_65%)]" aria-hidden="true" />
+              <div className="relative flex flex-col gap-7 text-right">
                 <div className="flex items-center justify-end gap-4">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-semibold text-white">المهندس رأفت منصور الشنور</h3>
@@ -252,21 +245,21 @@ export default function SoftwareEngineeringPage() {
                     alt="المهندس رأفت منصور الشنور"
                     width={120}
                     height={120}
-                    className="h-24 w-24 rounded-3xl border border-white/20 object-cover"
+                    className="h-24 w-24 rounded-3xl border border-white/15 object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <p className="text-sm leading-7 text-white/70">
+                <p className="text-sm leading-8 text-white/75">
                   متخصص في هندسة المنصات السحابية والذكاء الاصطناعي التطبيقي، قمت بقيادة مشاريع دمج Gemini AI مع نظارات ذكية لتدريب الفرق الميدانية، وأشرفت على تطوير منظومات SaaS لقطاعات التعليم والخدمات.
                 </p>
-                <div className="grid gap-2 text-xs text-white/60">
+                <div className="grid gap-2 text-xs text-white/65">
                   <span>Dip Tech • Smart Glasses System Lead • Directed Scheduling 2023</span>
                   <span>جامعة حلب - هندسة المعلوماتية (تخصص برمجيات)</span>
                 </div>
               </div>
             </article>
-            <article className="relative overflow-hidden rounded-[32px] border border-white/12 bg-white/8 p-8 backdrop-blur-xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(123,31,162,0.2),_transparent_70%)]" aria-hidden="true" />
-              <div className="relative flex flex-col gap-6 text-right">
+            <article className="relative overflow-hidden rounded-[36px] border border-white/12 bg-white/7 p-9 backdrop-blur-xl">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(123,31,162,0.16),_transparent_70%)]" aria-hidden="true" />
+              <div className="relative flex flex-col gap-7 text-right">
                 <div className="flex items-center justify-end gap-4">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-semibold text-white">المهندس محمد مروان عواجي الحسن</h3>
@@ -277,13 +270,13 @@ export default function SoftwareEngineeringPage() {
                     alt="المهندس محمد مروان عواجي الحسن"
                     width={120}
                     height={120}
-                    className="h-24 w-24 rounded-3xl border border-white/20 object-cover"
+                    className="h-24 w-24 rounded-3xl border border-white/15 object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
                 <p className="text-sm leading-7 text-white/70">
                   متخصص في تطوير واجهات الويب عالية الأداء، بناء واجهات تحكم لمشاريع إنترنت الأشياء، وضبط تكامل الـ API مع أنظمة الذكاء الاصطناعي لتحسين تجربة المستخدم النهائي.
                 </p>
-                <div className="grid gap-2 text-xs text-white/60">
+                <div className="grid gap-2 text-xs text-white/62">
                   <span>Full-stack Engineer • API Integrations • XR Interfaces</span>
                   <span>مساهم رئيسي في تطبيقات الواقع المعزز للقطاع الخدمي</span>
                 </div>
@@ -305,7 +298,7 @@ export default function SoftwareEngineeringPage() {
             {projects.map((project) => (
               <div
                 key={project.title}
-                className="group h-full rounded-3xl border border-white/12 bg-white/8 p-6 backdrop-blur-md transition hover:-translate-y-1 hover:border-cyan-300/60"
+                className="group h-full rounded-3xl border border-white/12 bg-white/7 p-7 backdrop-blur-md transition hover:-translate-y-1 hover:border-cyan-300/60"
               >
                 <div className="flex h-full flex-col gap-4 text-right">
                   <h3 className="text-xl font-semibold text-white">{project.title}</h3>
@@ -330,7 +323,7 @@ export default function SoftwareEngineeringPage() {
             </p>
           </header>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-[28px] border border-white/12 bg-white/8 p-6 text-right text-sm text-white/70">
+            <div className="rounded-[28px] border border-white/12 bg-white/7 p-7 text-right text-sm text-white/72">
               <h3 className="text-lg font-semibold text-white">بحث علمي: Directed Scheduling 2023</h3>
               <p className="mt-3 leading-7">
                 تطوير إطار جدولة موجهة للأحمال الحاسوبية الثقيلة، وتحسين الأداء بنسبة 27% مقارنة بالمنهجيات التقليدية.
@@ -345,13 +338,13 @@ export default function SoftwareEngineeringPage() {
           </div>
         </section>
 
-        <section aria-labelledby="testimonials" className="space-y-6">
+        <section aria-labelledby="testimonials" className="space-y-7">
           <header className="space-y-3 text-right">
             <h2 id="testimonials" className="text-3xl font-semibold text-white">
               قالوا عنا
             </h2>
           </header>
-          <blockquote className="rounded-[30px] border border-white/12 bg-white/8 p-8 text-right text-base leading-8 text-white/70">
+          <blockquote className="rounded-[30px] border border-white/12 bg-white/7 p-8 text-right text-base leading-8 text-white/72">
             <p>"دقة في التحليل وسرعة في التنفيذ، م. رأفت قدم لنا حلولاً تقنية فاقت التوقعات."</p>
             <footer className="mt-4 text-sm text-cyan-300">عميل - شركة تقنية بالكويت</footer>
           </blockquote>
@@ -370,15 +363,25 @@ export default function SoftwareEngineeringPage() {
             <div className="flex flex-col items-end gap-4 text-white/70 md:flex-row md:items-center md:justify-end">
               <div className="flex flex-col items-end text-sm">
                 <span className="text-xs uppercase tracking-[0.4em] text-cyan-300">WhatsApp</span>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-white">
-                  00963 9364 57500
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-semibold text-white"
+                  dir="ltr"
+                >
+                  {WHATSAPP_DISPLAY}
                 </a>
               </div>
               <div className="hidden h-12 w-px bg-white/15 md:block" aria-hidden="true" />
               <div className="flex flex-col items-end text-sm">
                 <span className="text-xs uppercase tracking-[0.4em] text-fuchsia-300">Direct Call (KW)</span>
-                <a href={`tel:${DIRECT_CALL_KW}`} className="text-lg font-semibold text-white">
-                  {DIRECT_CALL_KW}
+                <a
+                  href={`tel:${DIRECT_CALL_KW}`}
+                  className="text-lg font-semibold text-white"
+                  dir="ltr"
+                >
+                  {DIRECT_CALL_DISPLAY}
                 </a>
               </div>
               <div className="hidden h-12 w-px bg-white/15 md:block" aria-hidden="true" />
@@ -395,6 +398,11 @@ export default function SoftwareEngineeringPage() {
           </div>
         </section>
       </main>
+      <style jsx global>{`
+        body:has(main [data-page="software-engineering"]) .header-call-cta {
+          display: none !important;
+        }
+      `}</style>
     </div>
   );
 }

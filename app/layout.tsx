@@ -156,7 +156,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <div className="flex items-center gap-2">
                   <LeadTrackedLink
                     href={`tel:${PHONE_NUMBER}`}
-                    className="flex items-center gap-2 rounded-full bg-kuwait-green px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:bg-green-700"
+                    className="header-call-cta flex items-center gap-2 rounded-full bg-kuwait-green px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:bg-green-700"
                     channel="phone"
                     source="header-call"
                   >
@@ -260,22 +260,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 </div>
               </div>
               <div className="mt-8 text-center text-xs text-kuwait-black/60">
-                © {currentYear} {BUSINESS_BRAND}. جميع الحقوق محفوظة.
+                {currentYear} {BUSINESS_BRAND}. جميع الحقوق محفوظة.
               </div>
             </footer>
           </div>
-          <LeadTrackedLink
-            href={`${WHATSAPP_LINK}?text=${encodeURIComponent("مرحبا، أحتاج خدمة صيانة من الكويت سيرفيس.")}`}
-            className="group fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-kuwait-green px-5 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-green-700"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="تواصل عبر واتساب"
-            channel="whatsapp"
-            source="floating-whatsapp"
-          >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
-            <span className="hidden sm:inline">اطلب الخدمة الآن</span>
-          </LeadTrackedLink>
         </TrackingProvider>
       </body>
     </html>
