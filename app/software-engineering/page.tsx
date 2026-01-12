@@ -37,7 +37,7 @@ const heroHighlights = [
 ];
 
 const aboutContent = {
-  ar: "استوديو هندسي تنفيذي يقوده مهندسو معلوماتية بخبرة أكاديمية وعملية تتجاوز عشر سنوات في الخليج. نبتكر حلول برمجية متقدمة، منصات تعليمية رقمية، وتكاملات ذكاء اصطناعي موثوقة للمؤسسات الحكومية والقطاع الخاص.",
+  ar: "استوديو هندسي تنفيذي يقوده مهندسو معلوماتية بخبرة أكاديمية وعملية في الخليج. نبتكر حلول برمجية متقدمة، منصات تعليمية رقمية، وتكاملات ذكاء اصطناعي موثوقة للمؤسسات الحكومية والقطاع الخاص.",
   en: "An executive technology studio led by senior software engineers with a decade of regional experience. We architect advanced software, multilingual education platforms, and dependable AI integrations for government entities and enterprise groups across the Gulf.",
   pillars: [
     {
@@ -143,7 +143,7 @@ const teamMembers = [
   },
   {
     name: "المهندس محمد مروان عواجي الحسن",
-    roleAr: "شريك تقني ومهندس برمجيات",
+    roleAr: "شريك عمل ومهندس برمجيات",
     roleEn: "Software Engineer & Technical Partner",
     summary:
       "شريك تقني ومهندس برمجيات خبير في تطوير الأنظمة الخلفية (Backend) وإدارة البيانات الضخمة، متخصص في بناء أنظمة سحابية مستقرة وقابلة للتوسع.",
@@ -194,7 +194,7 @@ const professionalServiceSchema = {
     "@type": "Person",
     name: "م. رأفت منصور الشنور",
     jobTitle: "مهندس برمجيات وخبير حلول ذكاء اصطناعي",
-    alumniOf: "جامعة حلب - هندسة المعلوماتية",
+    alumniOf: " هندسة المعلوماتية",
   },
   contactPoint: {
     "@type": "ContactPoint",
