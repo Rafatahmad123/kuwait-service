@@ -33,9 +33,19 @@ const config: Config = {
           "50%": { transform: "translateY(-12px)" },
           "100%": { transform: "translateY(0)" },
         },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "0.4", transform: "scale(0.97)" },
+          "50%": { opacity: "1", transform: "scale(1.03)" },
+        },
+        tilt: {
+          "0%, 100%": { transform: "rotate3d(1, -1, 0, 0deg)" },
+          "50%": { transform: "rotate3d(1, -1, 0, 1.5deg)" },
+        },
       },
       animation: {
         "float-card": "float-card 9s ease-in-out infinite",
+        "pulse-slow": "pulse-slow 6s ease-in-out infinite",
+        tilt: "tilt 8s ease-in-out infinite",
       },
     },
   },
