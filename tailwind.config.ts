@@ -27,6 +27,16 @@ const config: Config = {
       backgroundImage: {
         "grid-pattern": "linear-gradient(135deg, rgba(46,125,50,0.12) 0%, rgba(211,47,47,0.08) 100%)",
       },
+      keyframes: {
+        "float-card": {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "float-card": "float-card 9s ease-in-out infinite",
+      },
     },
   },
   safelist: [

@@ -100,7 +100,7 @@ export default function SoftwareEngineeringPage() {
   return (
     <div
       data-page="software-engineering"
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#101625] via-[#0d1422] to-[#0b111d] text-white"
+      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#101625] via-[#0d1422] to-[#0b111d] text-white [&_.header-call-cta]:!hidden"
     >
       <JsonLd data={professionalServiceSchema} />
 
@@ -150,9 +150,8 @@ export default function SoftwareEngineeringPage() {
                   alt="المهندس رأفت منصور الشنور خلال عرض مشروع"
                   width={720}
                   height={480}
-                  className="h-64 w-full rounded-[28px] object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  className="h-64 w-full animate-float-card rounded-[28px] object-cover transition-transform duration-700 ease-out hover:scale-105"
                   priority
-                  style={{ animation: "floatCard 9s ease-in-out infinite" }}
                 />
                 <div className="grid gap-3 rounded-[28px] border border-white/10 bg-white/6 p-6 text-right">
                   <p className="text-sm text-white/70">
@@ -369,9 +368,8 @@ export default function SoftwareEngineeringPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-lg font-semibold text-white"
-                  dir="ltr"
                 >
-                  {WHATSAPP_DISPLAY}
+                  <span dir="ltr">{WHATSAPP_DISPLAY}</span>
                 </a>
               </div>
               <div className="hidden h-12 w-px bg-white/15 md:block" aria-hidden="true" />
@@ -380,9 +378,8 @@ export default function SoftwareEngineeringPage() {
                 <a
                   href={`tel:${DIRECT_CALL_KW}`}
                   className="text-lg font-semibold text-white"
-                  dir="ltr"
                 >
-                  {DIRECT_CALL_DISPLAY}
+                  <span dir="ltr">{DIRECT_CALL_DISPLAY}</span>
                 </a>
               </div>
               <div className="hidden h-12 w-px bg-white/15 md:block" aria-hidden="true" />
@@ -399,23 +396,6 @@ export default function SoftwareEngineeringPage() {
           </div>
         </section>
       </main>
-      <style jsx global>{`
-        @keyframes floatCard {
-          0% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-12px);
-          }
-          100% {
-            transform: translateY(0px);
-          }
-        }
-
-        body:has(main [data-page="software-engineering"]) .header-call-cta {
-          display: none !important;
-        }
-      `}</style>
     </div>
   );
 }
