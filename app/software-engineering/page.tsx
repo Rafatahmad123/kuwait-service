@@ -236,7 +236,7 @@ export default function SoftwareEngineeringPage() {
   return (
     <div
       data-page="software-engineering"
-      className={`${cairo.className} ${cairo.variable} ${inter.variable} relative min-h-screen overflow-hidden bg-[#020617] text-slate-100 [&_.header-call-cta]:!hidden`}
+      className={`${cairo.className} ${cairo.variable} ${inter.variable} relative min-h-screen overflow-x-hidden bg-[#020617] pt-20 text-slate-100 [&_.header-call-cta]:!hidden md:pt-24`}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(45,27,105,0.28),_transparent_60%)]" />

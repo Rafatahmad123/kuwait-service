@@ -1,12 +1,14 @@
 import type { Metadata, Route } from "next";
 import Link from "next/link";
 import { Cairo } from "next/font/google";
-import { MessageCircle, PhoneCall } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import TrackingProvider from "@/components/TrackingProvider";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
+import MainNavbar from "@/components/MainNavbar";
+
 import {
   BASE_URL,
   BUSINESS_BRAND,
@@ -125,47 +127,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="min-h-screen bg-kuwait-sand text-kuwait-black antialiased selection:bg-kuwait-green/20">
         <TrackingProvider>
           <div className="relative flex min-h-screen flex-col">
-            <header className="sticky top-0 z-40 border-b border-kuwait-green/20 bg-white/90 backdrop-blur">
-              <div
-                className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3"
-              >
-                <Link href="/" className="flex items-center gap-3">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-kuwait-green/10 text-kuwait-green">
-                    KS
-                  </span>
-                  <span className="flex flex-col leading-tight">
-                    <span className="text-lg font-bold text-kuwait-green">
-                      {BUSINESS_NAME_AR}
-                    </span>
-                    <span className="text-xs text-kuwait-black/70" dir="ltr">
-                      Kuwait Service
-                    </span>
-                  </span>
-                </Link>
-                <nav className="hidden items-center gap-4 text-sm font-medium md:flex">
-                  {NAV_ITEMS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="text-kuwait-black/80 transition hover:text-kuwait-green"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </nav>
-                <div className="flex items-center gap-2">
-                  <LeadTrackedLink
-                    href={`tel:${PHONE_NUMBER}`}
-                    className="header-call-cta flex items-center gap-2 rounded-full bg-kuwait-green px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:bg-green-700"
-                    channel="phone"
-                    source="header-call"
-                  >
-                    <PhoneCall className="h-4 w-4" aria-hidden="true" />
-                    <span>{FORMATTED_PHONE}</span>
-                  </LeadTrackedLink>
-                </div>
-              </div>
-            </header>
+            <MainNavbar
+              navItems={NAV_ITEMS}
+              businessNameAr={BUSINESS_NAME_AR}
+              formattedPhone={FORMATTED_PHONE}
+              phoneNumber={PHONE_NUMBER}
+            />
 
             <main className="flex-1">
               {children}
