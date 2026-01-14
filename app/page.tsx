@@ -8,8 +8,11 @@ import {
   BASE_URL,
   BUSINESS_BRAND,
   BUSINESS_NAME_AR,
+  BUSINESS_PROFILE_NAME,
   DEFAULT_KEYWORDS,
   FORMATTED_PHONE,
+  OWNER_NAME_AR,
+  OWNER_NAME_EN,
   PHONE_NUMBER,
   SERVICE_AREAS,
   WHATSAPP_LINK,
@@ -114,10 +117,10 @@ const testimonials = [
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: BUSINESS_BRAND,
+  serviceType: "Satellite Service",
   provider: {
     "@type": "LocalBusiness",
-    name: BUSINESS_BRAND,
+    name: BUSINESS_PROFILE_NAME,
     url: BASE_URL,
     telephone: PHONE_NUMBER,
     areaServed: SERVICE_AREAS,
@@ -140,10 +143,9 @@ const homeSchema = {
 };
 
 export const metadata: Metadata = {
-  title:
-    "فني ستلايت، كراج متنقل، تصليح طباخات، كاميرات مراقبة في الكويت | خدمات الكويت المتكاملة",
+  title: `${BUSINESS_PROFILE_NAME} | حلول ستلايت وصيانة متكاملة في الكويت`,
   description:
-    "خدمات الكويت المتكاملة توفر فني ستلايت محترف، كراج متنقل سريع، تصليح طباخات متكامل، وتركيب كاميرات مراقبة حديثة في الكويت مع استجابة فورية لجميع المناطق.",
+    `${BUSINESS_PROFILE_NAME} يقدم خدمات ستلايت، ميكانيكي متنقل، صيانة أفران، وكاميرات مراقبة بخدمة 24 ساعة لكل مناطق حولي، الأحمدي، الجهراء، والعاصمة.`,
   keywords: [
     ...DEFAULT_KEYWORDS,
     "فني ستلايت الكويت",
@@ -155,10 +157,9 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
-    title:
-      "فني ستلايت، كراج متنقل، تصليح طباخات، كاميرات مراقبة في الكويت",
+    title: `${BUSINESS_PROFILE_NAME} | حلول ستلايت وصيانة متكاملة في الكويت`,
     description:
-      "فريق متخصص يقدم فني ستلايت، كراج متنقل، تصليح طباخات، وكاميرات مراقبة بخدمة 24 ساعة تغطي الكويت بالكامل.",
+      `${BUSINESS_PROFILE_NAME} يقدم حلول تركيب وصيانة وبرمجة متخصصة تشمل خدمات الستلايت، الطوارئ المتنقلة، صيانة الأفران، وأنظمة المراقبة على مدار الساعة في الكويت.`,
     url: BASE_URL,
     locale: "ar_KW",
   },
@@ -201,7 +202,7 @@ export default function HomePage() {
                 <span dir="ltr">{FORMATTED_PHONE}</span>
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب في طلب خدمة من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب في طلب خدمة من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-white/60 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -297,9 +298,9 @@ export default function HomePage() {
       <section className="bg-white py-16">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:flex-row md:items-center">
           <div className="flex-1 space-y-4">
-            <h2 className="section-title">ليه تختار Kuwait Service؟</h2>
+            <h2 className="section-title">ليه تختار {OWNER_NAME_AR}؟</h2>
             <p className="text-base text-kuwait-black/70">
-              فريقنا جاهز لدعمك في أي وقت مع ضمان جودة الأعمال وخدمة عملاء متواصلة عبر الهاتف والواتساب، بالإضافة إلى تغطية شاملة لمناطق الكويت بما فيها مبارك الكبير، الجابرية، والقرين.
+              فريق {OWNER_NAME_AR} جاهز لدعمك في أي وقت مع ضمان جودة الأعمال وخدمة عملاء متواصلة عبر الهاتف والواتساب، بالإضافة إلى تغطية شاملة لمناطق الكويت بما فيها مبارك الكبير، الجابرية، والقرين.
             </p>
           </div>
           <div className="flex-1 grid gap-4 sm:grid-cols-2">
@@ -341,7 +342,7 @@ export default function HomePage() {
               <span dir="ltr">{FORMATTED_PHONE}</span>
             </LeadTrackedLink>
             <LeadTrackedLink
-              href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أحتاج خدمة عاجلة من Kuwait Service.")}`}
+              href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أحتاج خدمة عاجلة من ${OWNER_NAME_AR}.`)}`}
               className="flex items-center justify-center gap-2 rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               target="_blank"
               rel="noopener noreferrer"

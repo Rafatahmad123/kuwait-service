@@ -6,9 +6,10 @@ import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
 import {
   BASE_URL,
-  BUSINESS_BRAND,
+  BUSINESS_PROFILE_NAME,
   DEFAULT_KEYWORDS,
   FORMATTED_PHONE,
+  OWNER_NAME_AR,
   PHONE_NUMBER,
   SERVICE_AREAS,
   WHATSAPP_LINK,
@@ -22,10 +23,10 @@ const SATELLITE_BLUR_PLACEHOLDER =
 const satelliteSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Satellite & IPTV Services Kuwait",
+  serviceType: "Satellite Service",
   provider: {
     "@type": "LocalBusiness",
-    name: BUSINESS_BRAND,
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
     areaServed: SERVICE_AREAS,
     url: `${BASE_URL}/satellite`,
@@ -44,9 +45,9 @@ const satelliteSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "أفضل تركيب ستلايت و IPTV في الكويت | خدمة رسيفر واي فاي",
+  title: `${BUSINESS_PROFILE_NAME} | تركيب وصيانة ستلايت 24 ساعة`,
   description:
-    "نوفّر تركيب وصيانة ستلايت و IPTV في الكويت مع برمجة القنوات وخدمة رسيفر واي فاي بدون أطباق، دعم فني سريع في جميع المناطق وخدمة منازل متميزة.",
+    `${BUSINESS_PROFILE_NAME} يقدم حلول تركيب وصيانة وبرمجة ستلايت و IPTV مع دعم فني سريع في حولي، الأحمدي، الجهراء، والعاصمة على مدار الساعة.`,
   keywords: [
     "تركيب ستلايت الكويت",
     "IPTV الكويت",
@@ -59,9 +60,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/satellite`,
   },
   openGraph: {
-    title: "تركيب ستلايت و IPTV متخصص في الكويت",
+    title: `${BUSINESS_PROFILE_NAME} | تركيب وصيانة ستلايت 24 ساعة`,
     description:
-      "شركة خدمات الكويت المتكاملة تقدّم حلول ستلايت متكاملة مع رسيفر واي فاي وخدمة IPTV مع صيانة سريعة لجميع محافظات الكويت.",
+      `${BUSINESS_PROFILE_NAME} يوفر خدمات تركيب ستلايت، برمجة رسيفرات، ودعم IPTV مع فريق متخصص واستجابة سريعة لجميع المحافظات.`,
     url: `${BASE_URL}/satellite`,
     locale: "ar_KW",
   },
@@ -134,7 +135,7 @@ export default function SatellitePage() {
                 <span className="text-lg" dir="ltr">اتصل الآن: {FORMATTED_PHONE}</span>
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بخدمة الستلايت والـ IPTV من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب بخدمة الستلايت والـ IPTV من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-green/40 px-5 py-3 text-sm font-semibold text-kuwait-green transition hover:bg-kuwait-green/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -150,7 +151,7 @@ export default function SatellitePage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={SATELLITE_HERO_SRC}
-                alt="فني ستلايت هندي كويتي خدمة 24 ساعة"
+                alt="فريق م. رأفت لخدمات الصيانة يركب طبق دش ستلايت في الكويت"
                 fill
                 className="object-cover"
                 placeholder="blur"
@@ -163,7 +164,7 @@ export default function SatellitePage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
                 src={SATELLITE_INSTALL_SRC}
-                alt="فني ستلايت هندي كويتي خدمة 24 ساعة"
+                alt="م. رأفت وفريقه ينجزون تركيب رسيفر وستلايت في الكويت"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"
@@ -235,7 +236,7 @@ export default function SatellitePage() {
                 كل جهاز يتم تفعيله مع حسابات رسمية وتحديثات تلقائية لضمان أفضل أداء دون انقطاع.
               </p>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بطلب رسيفر واي فاي من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب بطلب رسيفر واي فاي من ${OWNER_NAME_AR}.`)}`}
                 className="inline-flex items-center gap-2 rounded-full bg-kuwait-red px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-red-700"
                 target="_blank"
                 rel="noopener noreferrer"

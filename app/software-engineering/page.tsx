@@ -3,6 +3,16 @@ import Image from "next/image";
 import { Cairo, Inter } from "next/font/google";
 
 import JsonLd from "@/components/JsonLd";
+import {
+  BASE_URL,
+  BUSINESS_PROFILE_NAME,
+  DEFAULT_KEYWORDS,
+  FORMATTED_PHONE,
+  OWNER_NAME_AR,
+  PHONE_NUMBER,
+  SERVICE_AREAS,
+  WHATSAPP_LINK,
+} from "@/lib/constants";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -17,7 +27,7 @@ const inter = Inter({
 });
 
 const WHATSAPP_NUMBER = "963936457500";
-const WHATSAPP_MESSAGE = "مرحباً بشمهندس رأفت، أبحث عن استشارة هندسية حول تطوير حلول برمجية وذكاء اصطناعي.";
+const WHATSAPP_MESSAGE = `مرحباً ${OWNER_NAME_AR}، أبحث عن استشارة هندسية حول تطوير حلول برمجية وذكاء اصطناعي.`;
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 const WHATSAPP_DISPLAY = "00963936457500";
 
@@ -132,7 +142,7 @@ const caseStudies = [
 
 const teamMembers = [
   {
-    name: "المهندس رأفت منصور الشنور",
+    name: OWNER_NAME_AR,
     roleAr: "المؤسس والقائد التقني",
     roleEn: "Founder & Lead Software Engineer",
     summary:
@@ -174,55 +184,25 @@ const achievements = [
   },
 ];
 
-const professionalServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "المهندس رأفت منصور الشنور",
-  image: "https://kuwait-service.com/rafat-2.jpg",
-  areaServed: ["SA", "AE", "KW"],
-  knowsAbout: ["AI Systems", "Software Engineering", "AR", "SEO", "Web Development"],
-  url: "https://kuwait-service.com/software-engineering",
-  telephone: "+96551222091",
-  sameAs: [
-    "https://www.linkedin.com/in/rafat-ahmad",
-  ],
-  serviceOffer: {
-    "@type": "Offer",
-    description: "خدمات هندسة البرمجيات، الذكاء الاصطناعي، واستراتيجيات النمو الرقمي في منطقة الخليج.",
-  },
-  provider: {
-    "@type": "Person",
-    name: "م. رأفت منصور الشنور",
-    jobTitle: "مهندس برمجيات وخبير حلول ذكاء اصطناعي",
-    alumniOf: " هندسة المعلوماتية",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "sales",
-    telephone: "+963936457500",
-    availableLanguage: ["ar", "en"],
-  },
-};
-
 export const metadata: Metadata = {
-  title: "استوديو هندسة برمجيات وحلول ذكاء اصطناعي | م. رأفت منصور الشنور",
+  title: `${BUSINESS_PROFILE_NAME} | استوديو هندسة برمجيات وحلول ذكاء اصطناعي بقيادة ${OWNER_NAME_AR}`,
   description:
-    "استوديو هندسي تنفيذي يقدم حلول برمجية متقدمة، منصات تعليمية رقمية، واستشارات ذكاء اصطناعي للمؤسسات في الخليج بقيادة م. رأفت منصور الشنور.",
+    `${BUSINESS_PROFILE_NAME} بقيادة ${OWNER_NAME_AR} يقدم حلول برمجية متقدمة، منصات تعليمية رقمية، واستشارات ذكاء اصطناعي للمؤسسات في الخليج.`,
   alternates: {
-    canonical: "https://kuwait-service.com/software-engineering",
+    canonical: `${BASE_URL}/software-engineering`,
   },
   openGraph: {
-    title: "استوديو هندسة برمجيات وحلول ذكاء اصطناعي | م. رأفت منصور الشنور",
+    title: `${BUSINESS_PROFILE_NAME} | استوديو هندسة برمجيات وحلول ذكاء اصطناعي`,
     description:
-      "حلول برمجية تنفيذية، منصات تعليمية رقمية، واستشارات ذكاء اصطناعي موجهة للمؤسسات في الخليج بقيادة فريق هندسي متخصص.",
-    url: "https://kuwait-service.com/software-engineering",
+      `${BUSINESS_PROFILE_NAME} يقود حلول برمجية تنفيذية، منصات تعليمية رقمية، واستشارات ذكاء اصطناعي موجهة للمؤسسات في الخليج بقيادة ${OWNER_NAME_AR}.`,
+    url: `${BASE_URL}/software-engineering`,
     locale: "ar_SA",
     images: [
       {
-        url: "https://kuwait-service.com/rafat-3.jpg",
+        url: `${BASE_URL}/rafat-3.jpg`,
         width: 1200,
         height: 630,
-        alt: "المهندس رأفت منصور الشنور - حلول ذكاء اصطناعي وبرمجيات متكاملة",
+        alt: `${BUSINESS_PROFILE_NAME} - استوديو هندسة برمجيات وحلول ذكاء اصطناعي`,
       },
     ],
   },
@@ -232,10 +212,38 @@ export const metadata: Metadata = {
   },
 };
 
+const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: `${BUSINESS_PROFILE_NAME}`,
+  image: `${BASE_URL}/rafat-2.jpg`,
+  areaServed: SERVICE_AREAS,
+  knowsAbout: ["AI Systems", "Software Engineering", "AR", "SEO", "Web Development"],
+  url: `${BASE_URL}/software-engineering`,
+  telephone: FORMATTED_PHONE,
+  sameAs: [
+    "https://www.linkedin.com/in/rafat-ahmad",
+  ],
+  serviceOffer: {
+    "@type": "Offer",
+    description: "خدمات هندسة البرمجيات، الذكاء الاصطناعي، واستراتيجيات النمو الرقمي في منطقة الخليج.",
+  },
+  provider: {
+    "@type": "Person",
+    name: OWNER_NAME_AR,
+    jobTitle: "مهندس برمجيات وخبير حلول ذكاء اصطناعي",
+    alumniOf: " هندسة المعلوماتية",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: PHONE_NUMBER,
+    availableLanguage: ["ar", "en"],
+  },
+};
 export default function SoftwareEngineeringPage() {
   return (
     <div
-      data-page="software-engineering"
       className={`${cairo.className} ${cairo.variable} ${inter.variable} relative min-h-screen overflow-x-hidden bg-[#020617] pt-20 text-slate-100 [&_.header-call-cta]:!hidden md:pt-24`}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -272,9 +280,8 @@ export default function SoftwareEngineeringPage() {
           <div className="order-2 space-y-12 text-right lg:order-1">
             <div className="space-y-6">
               <span
-                className={`${inter.className} inline-flex items-center justify-center rounded-full border border-slate-800/70 bg-white/5 px-5 py-1 text-[10px] uppercase tracking-[0.5em] text-slate-300/90`}
-              >
-                Executive Tech Studio
+                className={`${inter.className} inline-flex items-center justify-center rounded-full border border-slate-800/70 bg-white/5 px-5 py-1 text-[10px] uppercase tracking-[0.5em] text-slate-300/90`}>
+                استوديو هندسة برمجيات وحلول ذكاء اصطناعي
               </span>
               <div className="space-y-4">
                 <h1
@@ -354,7 +361,7 @@ export default function SoftwareEngineeringPage() {
               >
                 <Image
                   src="/rafat-2.jpg"
-                  alt="المهندس رأفت منصور الشنور"
+                  alt={OWNER_NAME_AR}
                   width={640}
                   height={720}
                   className="h-full w-full min-h-[260px] object-cover"

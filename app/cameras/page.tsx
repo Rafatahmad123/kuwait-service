@@ -7,9 +7,10 @@ import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
 import {
   BASE_URL,
-  BUSINESS_BRAND,
+  BUSINESS_PROFILE_NAME,
   DEFAULT_KEYWORDS,
   FORMATTED_PHONE,
+  OWNER_NAME_AR,
   PHONE_NUMBER,
   SERVICE_AREAS,
   WHATSAPP_LINK,
@@ -26,7 +27,7 @@ const camerasSchema = {
   serviceType: "CCTV & Intercom Installation Kuwait",
   provider: {
     "@type": "LocalBusiness",
-    name: BUSINESS_BRAND,
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
     areaServed: SERVICE_AREAS,
     url: `${BASE_URL}/cameras`,
@@ -41,9 +42,9 @@ const camerasSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "فني كاميرات مراقبة هندي خدمة 24 ساعة | أرخص الأسعار في الكويت",
+  title: `${BUSINESS_PROFILE_NAME} | تركيب كاميرات مراقبة وخدمات أمنية 24 ساعة`,
   description:
-    "فني كاميرات مراقبة هندي/باكستاني يقدم تركيب كاميرات واي فاي، انتركم ذكي، صيانة أنظمة أمنية في الكويت بأرخص الأسعار وخدمة متواصلة 24 ساعة.",
+    `${BUSINESS_PROFILE_NAME} يقدم تركيب كاميرات مراقبة، انتركم ذكي، وصيانة أنظمة أمنية في الكويت بخدمة مستمرة 24 ساعة وأسعار منافسة.`,
   keywords: [
     "تركيب كاميرات مراقبة",
     "صيانة أنظمة أمنية",
@@ -56,9 +57,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/cameras`,
   },
   openGraph: {
-    title: "خبراء كاميرات مراقبة في الكويت | خدمة 24 ساعة",
+    title: `${BUSINESS_PROFILE_NAME} | خبراء كاميرات مراقبة في الكويت`,
     description:
-      "احصل على تركيب كاميرات مراقبة ذكية، انتركم وفيديو دورفون مع فني هندي/باكستاني محترف وضمان ممتد لجميع المناطق في الكويت.",
+      `${BUSINESS_PROFILE_NAME} يوفر تركيب كاميرات مراقبة ذكية، انتركم وفيديو دورفون مع فنيين محترفين وضمان ممتد لجميع المناطق في الكويت.`,
     url: `${BASE_URL}/cameras`,
     locale: "ar_KW",
   },
@@ -134,7 +135,7 @@ export default function CamerasPage() {
                 اتصل الآن: {FORMATTED_PHONE}
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بخدمة تركيب كاميرات مراقبة من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب بخدمة تركيب كاميرات مراقبة من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-green/40 px-5 py-3 text-sm font-semibold text-kuwait-green transition hover:bg-kuwait-green/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -150,7 +151,7 @@ export default function CamerasPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={CAMERAS_HERO_SRC}
-                alt="تركيب وصيانة كاميرات مراقبة ذكية"
+                alt="م. رأفت يشرف على تركيب وصيانة كاميرات مراقبة ذكية في الكويت"
                 fill
                 className="object-cover"
                 loading="lazy"
@@ -163,7 +164,7 @@ export default function CamerasPage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
                 src={CAMERAS_INSTALL_SRC}
-                alt="تركيب وصيانة كاميرات مراقبة ذكية"
+                alt="فريق م. رأفت يثبت كاميرات مراقبة ذكية مع اختبار البث"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"

@@ -4,7 +4,14 @@ import { ArrowLeftCircle, CheckCircle2, MapPin, PhoneCall } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
-import { BASE_URL, WHATSAPP_LINK } from "@/lib/constants";
+import {
+  BASE_URL,
+  BUSINESS_PROFILE_NAME,
+  FORMATTED_PHONE,
+  OWNER_NAME_AR,
+  PHONE_NUMBER,
+  WHATSAPP_LINK,
+} from "@/lib/constants";
 
 const COOKER_PHONE = "51222091";
 const COOKER_PHONE_FULL = "+96551222091";
@@ -23,7 +30,7 @@ const schema = {
   serviceType: "Cooker Repair Jahra",
   provider: {
     "@type": "LocalBusiness",
-    name: "Kuwait Service",
+    name: BUSINESS_PROFILE_NAME,
     telephone: COOKER_PHONE_FULL,
     areaServed: neighborhoods,
     url: `${BASE_URL}/cookers-jahra`,
@@ -36,9 +43,9 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: "تصليح طباخات الجهراء | صيانة أفران وغسالات بالمنزل",
+  title: `تصليح طباخات الجهراء | ${BUSINESS_PROFILE_NAME}`,
   description:
-    "تصليح طباخات الجهراء يوفر فني هندي وباكستاني لتنظيف الأفران، تبديل فالات وجام، وتصليح غسالات أوتوماتيك ونشافات في الجهراء، الصليبية، والنعيم.",
+    `${BUSINESS_PROFILE_NAME} يقدم تنظيف الأفران، تبديل فالات وجام، وتصليح غسالات أوتوماتيك ونشافات في الجهراء، الصليبية، والنعيم.`,
   keywords: [
     "تصليح طباخات الجهراء",
     "فني طباخات هندي الجهراء",
@@ -50,9 +57,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/cookers-jahra`,
   },
   openGraph: {
-    title: "تصليح طباخات الجهراء",
+    title: `تصليح طباخات الجهراء | ${BUSINESS_PROFILE_NAME}`,
     description:
-      "أفضل فني تصليح طباخات في الجهراء والصليبية والنعيم لتنظيف الأفران، تبديل فالات وجام، وتصليح الغسالات والنشافات داخل المنزل.",
+      `${BUSINESS_PROFILE_NAME} يوفر فني تصليح طباخات في الجهراء والصليبية والنعيم لتنظيف الأفران، تبديل فالات وجام، وتصليح الغسالات والنشافات داخل المنزل.`,
     url: `${BASE_URL}/cookers-jahra`,
     locale: "ar_KW",
   },
@@ -88,7 +95,7 @@ export default function CookersJahraPage() {
             </ul>
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أحتاج خدمة تصليح طباخات الجهراء من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أحتاج خدمة تصليح طباخات الجهراء من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-green/40 px-5 py-3 text-sm font-semibold text-kuwait-green transition hover:bg-kuwait-green/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -113,7 +120,7 @@ export default function CookersJahraPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white shadow-lg">
               <Image
                 src="/images/cookers-hero.jpg"
-                alt="فني تصليح طباخات الجهراء أثناء صيانة الفرن"
+                alt="فريق م. رأفت لخدمات الصيانة ينفذ صيانة طباخات في الجهراء"
                 fill
                 className="object-cover"
                 priority

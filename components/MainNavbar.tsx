@@ -15,6 +15,7 @@ type NavItem = {
 type MainNavbarProps = {
   navItems: NavItem[];
   businessNameAr: string;
+  businessNameEn: string;
   formattedPhone: string;
   phoneNumber: string;
 };
@@ -22,6 +23,7 @@ type MainNavbarProps = {
 export default function MainNavbar({
   navItems,
   businessNameAr,
+  businessNameEn,
   formattedPhone,
   phoneNumber,
 }: MainNavbarProps) {
@@ -40,7 +42,7 @@ export default function MainNavbar({
             <span className="flex flex-col leading-tight">
               <span className="text-lg font-bold text-kuwait-green">{businessNameAr}</span>
               <span className="text-xs text-kuwait-black/70" dir="ltr">
-                Kuwait Service
+                {businessNameEn}
               </span>
             </span>
           </Link>
@@ -92,7 +94,7 @@ export default function MainNavbar({
               <span className="flex flex-col leading-tight text-white">
                 <span className="text-base font-semibold">{businessNameAr}</span>
                 <span className="text-xs text-white/60" dir="ltr">
-                  Kuwait Service
+                  {businessNameEn}
                 </span>
               </span>
             </Link>

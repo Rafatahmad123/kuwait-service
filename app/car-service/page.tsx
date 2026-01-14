@@ -7,9 +7,10 @@ import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
 import {
   BASE_URL,
-  BUSINESS_BRAND,
+  BUSINESS_PROFILE_NAME,
   DEFAULT_KEYWORDS,
   FORMATTED_PHONE,
+  OWNER_NAME_AR,
   PHONE_NUMBER,
   SERVICE_AREAS,
   WHATSAPP_LINK,
@@ -26,7 +27,7 @@ const mobileMechanicSchema = {
   serviceType: "Mobile Mechanic Kuwait",
   provider: {
     "@type": "LocalBusiness",
-    name: BUSINESS_BRAND,
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
     areaServed: SERVICE_AREAS,
     url: `${BASE_URL}/car-service`,
@@ -39,9 +40,9 @@ const mobileMechanicSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "بنشر متنقل هندي خدمة 24 ساعة | أرخص الأسعار في الكويت",
+  title: "بنشر متنقل الكويت | م. رأفت لخدمات الصيانة والطوارئ",
   description:
-    "بنشر متنقل هندي/باكستاني يقدم تبديل تواير وبطاريات وصيانة سيارات على الطريق في الكويت بأرخص الأسعار مع خدمة 24 ساعة وطوارئ فورية.",
+    "م. رأفت يقدم خدمة بنشر متنقل هندي/باكستاني لتبديل التواير والبطاريات وصيانة السيارات على الطريق في الكويت مع طوارئ 24 ساعة وأسعار تنافسية.",
   keywords: [
     "بنشر متنقل الكويت",
     "تبديل تواير",
@@ -54,9 +55,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/car-service`,
   },
   openGraph: {
-    title: "بنشر متنقل في الكويت | خدمة 24 ساعة",
+    title: "بنشر متنقل الكويت مع م. رأفت | خدمة 24 ساعة",
     description:
-      "اطلب ميكانيكي متنقل هندي لتبديل الإطارات والبطاريات وإصلاح الأعطال على الطريق مع وصول سريع لجميع مناطق الكويت.",
+      "م. رأفت وفريقه يقدمون ميكانيكي متنقل لتبديل الإطارات والبطاريات وإصلاح الأعطال على الطريق مع وصول سريع لجميع مناطق الكويت.",
     url: `${BASE_URL}/car-service`,
     locale: "ar_KW",
   },
@@ -132,7 +133,7 @@ export default function CarServicePage() {
                 اتصل الآن: {FORMATTED_PHONE}
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أحتاج خدمة بنشر متنقل من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أحتاج خدمة بنشر متنقل من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-red/40 px-5 py-3 text-sm font-semibold text-kuwait-red transition hover:bg-kuwait-red/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -148,7 +149,7 @@ export default function CarServicePage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={CAR_SERVICE_HERO_SRC}
-                alt="خدمة بنشر وتصليح سيارات متنقل الكويت"
+                alt="فريق م. رأفت يقدم خدمة بنشر وتصليح سيارات متنقل في الكويت"
                 fill
                 className="object-cover"
                 loading="lazy"
@@ -161,7 +162,7 @@ export default function CarServicePage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-red/20 bg-white p-2 md:h-60">
               <Image
                 src={CAR_SERVICE_TOOLS_SRC}
-                alt="خدمة بنشر وتصليح سيارات متنقل الكويت"
+                alt="معدات م. رأفت لخدمة بنشر متنقل وتبديل الإطارات في الكويت"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"

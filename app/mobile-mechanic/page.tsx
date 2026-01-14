@@ -5,7 +5,7 @@ import LeadTrackedLink from "@/components/LeadTrackedLink";
 import ShareLocationButton from "@/components/ShareLocationButton";
 import {
   BASE_URL,
-  BUSINESS_BRAND,
+  BUSINESS_PROFILE_NAME,
   DEFAULT_KEYWORDS,
   FORMATTED_PHONE,
   PHONE_NUMBER,
@@ -19,7 +19,7 @@ const mechanicSchema = {
   serviceType: "Mobile Mechanic Kuwait",
   provider: {
     "@type": "LocalBusiness",
-    name: BUSINESS_BRAND,
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
     areaServed: SERVICE_AREAS,
     url: `${BASE_URL}/mobile-mechanic`,
@@ -33,9 +33,9 @@ const mechanicSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "ميكانيكي متنقل سريع في الكويت | خدمة إنقاذ الطريق",
+  title: `${BUSINESS_PROFILE_NAME} | ميكانيكي متنقل وخدمة إنقاذ الطريق في الكويت`,
   description:
-    "احجز ميكانيكي متنقل في الكويت يصل إلى موقعك خلال دقائق لتصليح السيارات، تبديل البطاريات، وسحب المركبة مع دعم عبر واتساب وخدمة 24 ساعة.",
+    `${BUSINESS_PROFILE_NAME} يوفر ميكانيكي متنقل يصل إلى موقعك خلال دقائق لتصليح السيارات، تبديل البطاريات، وسحب المركبة مع دعم واتساب وخدمة 24 ساعة في الكويت.`,
   keywords: [
     "ميكانيكي متنقل الكويت",
     "تصليح سيارات متنقل",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/mobile-mechanic`,
   },
   openGraph: {
-    title: "ميكانيكي متنقل على مدار الساعة في الكويت",
+    title: `${BUSINESS_PROFILE_NAME} | ميكانيكي متنقل على مدار الساعة في الكويت`,
     description:
-      "فرق ميكانيكية متنقلة تصل أينما كنت في الكويت لإصلاح الأعطال، تبديل الإطارات والبطاريات مع إمكانية مشاركة الموقع عبر واتساب.",
+      `${BUSINESS_PROFILE_NAME} يرسل فرق ميكانيكية متنقلة لإصلاح الأعطال وتبديل الإطارات والبطاريات مع إمكانية مشاركة الموقع عبر واتساب.`,
     url: `${BASE_URL}/mobile-mechanic`,
     locale: "ar_KW",
   },

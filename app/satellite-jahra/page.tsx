@@ -4,7 +4,14 @@ import { ArrowLeftCircle, CheckCircle2, MapPin, PhoneCall } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
-import { BASE_URL, FORMATTED_PHONE, PHONE_NUMBER, WHATSAPP_LINK } from "@/lib/constants";
+import {
+  BASE_URL,
+  BUSINESS_PROFILE_NAME,
+  FORMATTED_PHONE,
+  OWNER_NAME_AR,
+  PHONE_NUMBER,
+  WHATSAPP_LINK,
+} from "@/lib/constants";
 
 const neighborhoods = ["سعد العبدالله", "النسيم", "العيون", "القصر", "تيماء", "الواحة"];
 
@@ -22,7 +29,7 @@ const satelliteJsonLd = {
   areaServed: neighborhoods,
   provider: {
     "@type": "LocalBusiness",
-    name: "Kuwait Service",
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
     serviceArea: neighborhoods,
     url: `${BASE_URL}/satellite-jahra`,
@@ -38,7 +45,7 @@ const satelliteJsonLd = {
 export const metadata: Metadata = {
   title: "فني ستلايت الجهراء | تركيب ستلايت و IPTV في سعد العبدالله والنسيم",
   description:
-    "اطلب فني ستلايت الجهراء من Kuwait Service لتركيب وضبط أطباق الستلايت و IPTV مع دعم فوري في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة.",
+    `اطلب فني ستلايت الجهراء من ${OWNER_NAME_AR} لتركيب وضبط أطباق الستلايت و IPTV مع دعم فوري في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة.`,
   keywords: [
     "فني ستلايت الجهراء",
     "ستلايت سعد العبدالله",
@@ -99,7 +106,7 @@ export default function SatelliteJahraPage() {
                 اتصل الآن بـ فني ستلايت الجهراء: 00965662471661
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بخدمة فني ستلايت الجهراء من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب بخدمة فني ستلايت الجهراء من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-green/40 px-5 py-3 text-sm font-semibold text-kuwait-green transition hover:bg-kuwait-green/10"
                 target="_blank"
                 rel="noopener noreferrer"

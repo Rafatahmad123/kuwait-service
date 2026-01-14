@@ -24,7 +24,7 @@ const ovenSchema = {
     url: `${BASE_URL}/oven-repair`,
   },
   areaServed: SERVICE_AREAS,
-  brand: "Kuwait Service",
+  brand: BUSINESS_BRAND,
 };
 
 export const metadata: Metadata = {

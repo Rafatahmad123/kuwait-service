@@ -4,7 +4,14 @@ import { ArrowLeftCircle, CheckCircle2, MapPin, PhoneCall } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
-import { BASE_URL, FORMATTED_PHONE, PHONE_NUMBER, WHATSAPP_LINK } from "@/lib/constants";
+import {
+  BASE_URL,
+  BUSINESS_PROFILE_NAME,
+  FORMATTED_PHONE,
+  OWNER_NAME_AR,
+  PHONE_NUMBER,
+  WHATSAPP_LINK,
+} from "@/lib/constants";
 
 const neighborhoods = ["سعد العبدالله", "النسيم", "العيون", "القصر", "تيماء", "الواحة"];
 
@@ -21,7 +28,7 @@ const schema = {
   serviceType: "Mobile Garage Jahra",
   provider: {
     "@type": "LocalBusiness",
-    name: "Kuwait Service",
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
     areaServed: neighborhoods,
     url: `${BASE_URL}/car-service-jahra`,
@@ -33,9 +40,9 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: "كراج متنقل الجهراء | بنشر متنقل سعد العبدالله والنسيم",
+  title: `كراج متنقل الجهراء | ${BUSINESS_PROFILE_NAME}`,
   description:
-    "كراج متنقل الجهراء من Kuwait Service يوفر بنشر متنقل، تبديل بطاريات وتواير، وتشخيص أعطال سريع في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة.",
+    `${BUSINESS_PROFILE_NAME} يوفر بنشر متنقل وتبديل بطاريات وتواير مع تشخيص أعطال سريع في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة.`,
   keywords: [
     "كراج متنقل الجهراء",
     "بنشر متنقل سعد العبدالله",
@@ -47,9 +54,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/car-service-jahra`,
   },
   openGraph: {
-    title: "كراج متنقل الجهراء",
+    title: `كراج متنقل الجهراء | ${BUSINESS_PROFILE_NAME}`,
     description:
-      "خدمة بنشر متنقل وكراج متنقل في محافظة الجهراء مع طوارئ 24 ساعة تغطي سعد العبدالله والنسيم وتيماء.",
+      `${BUSINESS_PROFILE_NAME} يقدم خدمة بنشر متنقل وطوارئ 24 ساعة تغطي سعد العبدالله، النسيم، تيماء، والواحة.`,
     url: `${BASE_URL}/car-service-jahra`,
     locale: "ar_KW",
   },
@@ -82,7 +89,7 @@ export default function CarServiceJahraPage() {
             </ul>
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بخدمة كراج متنقل الجهراء من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب بخدمة كراج متنقل الجهراء من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-red/40 px-5 py-3 text-sm font-semibold text-kuwait-red transition hover:bg-kuwait-red/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -107,7 +114,7 @@ export default function CarServiceJahraPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl border border-kuwait-red/20 bg-white shadow-lg">
               <Image
                 src="/images/car-service-hero.jpg"
-                alt="كراج متنقل الجهراء يقوم بتبديل تواير السيارة"
+                alt="فريق م. رأفت لخدمات الصيانة يشغل بنشر متنقل في الجهراء"
                 fill
                 className="object-cover"
                 priority

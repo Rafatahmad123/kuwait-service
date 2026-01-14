@@ -4,7 +4,7 @@ import { ArrowLeftCircle, CheckCircle2, MapPin, PhoneCall } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
-import { BASE_URL, WHATSAPP_LINK } from "@/lib/constants";
+import { BASE_URL, BUSINESS_PROFILE_NAME, OWNER_NAME_AR, WHATSAPP_LINK } from "@/lib/constants";
 
 const GARAGE_PHONE = "51222091";
 const GARAGE_PHONE_FULL = "+96551222091";
@@ -22,7 +22,7 @@ const schema = {
   serviceType: "Mobile Garage Jahra",
   provider: {
     "@type": "LocalBusiness",
-    name: "Kuwait Service",
+    name: BUSINESS_PROFILE_NAME,
     telephone: GARAGE_PHONE_FULL,
     areaServed: neighborhoods,
     url: `${BASE_URL}/garage-jahra`,
@@ -86,7 +86,7 @@ export default function GarageJahraPage() {
             </ul>
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أحتاج خدمة كراج متنقل الجهراء لخدمة طريق 24 ساعة.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أحتاج خدمة كراج متنقل الجهراء من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-red/40 px-5 py-3 text-sm font-semibold text-kuwait-red transition hover:bg-kuwait-red/10"
                 target="_blank"
                 rel="noopener noreferrer"

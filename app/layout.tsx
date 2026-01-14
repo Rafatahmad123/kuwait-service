@@ -13,7 +13,11 @@ import {
   BASE_URL,
   BUSINESS_BRAND,
   BUSINESS_NAME_AR,
+  BUSINESS_NAME_EN,
+  BUSINESS_PROFILE_NAME,
   FORMATTED_PHONE,
+  GOOGLE_MAPS_EMBED_URL,
+  GOOGLE_MAPS_URL,
   PHONE_NUMBER,
   SERVICE_AREAS,
   WHATSAPP_LINK,
@@ -43,15 +47,18 @@ const NAV_ITEMS: NavItem[] = [
 const globalBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "خدمات الكويت المتكاملة - Kuwait Service",
+  "name": BUSINESS_PROFILE_NAME,
+  "serviceType": "Satellite Service",
   "url": BASE_URL,
   "telephone": PHONE_NUMBER,
-  "description": "أفضل شركة خدمات وصيانة منزلية في الكويت: فني ستلايت، ميكانيكي متنقل، تصليح أفران، وكاميرات مراقبة خدمة 24 ساعة.",
+  "description": `${BUSINESS_PROFILE_NAME} يقدم خدمات تركيب وصيانة وبرمجة ستلايت مع تغطية شاملة لكل المناطق في الكويت على مدار الساعة.`,
   "image": `${BASE_URL}/og-image.jpg`,
+
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "KW",
     "addressRegion": "Kuwait",
+    "addressLocality": "Kuwait",
   },
   "areaServed": SERVICE_AREAS.map(area => ({
     "@type": "City",
@@ -59,22 +66,26 @@ const globalBusinessSchema = {
   })),
   "priceRange": "$$",
   "openingHours": "Mo-Su 00:00-23:59",
+  "hasMap": GOOGLE_MAPS_URL,
+  "sameAs": [GOOGLE_MAPS_URL],
+
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": PHONE_NUMBER,
     "contactType": "customer service",
     "availableLanguage": ["Arabic", "English"],
+
   },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "فني هودات وتصليح أفران في الكويت | خدمة 24 ساعة | اتصل الآن",
-    template: "%s | فني هودات وتصليح أفران في الكويت",
+    default: "فني ستلايت الكويت - م. رأفت لخدمات الصيانة والبرمجة | تركيب وصيانة ستلايت 24 ساعة",
+    template: "%s | م. رأفت لخدمات الصيانة والبرمجة",
   },
   description:
-    "أفضل فني هودات ومطابخ في الكويت. متخصصون في تصليح الأفران والطباخات وتنظيف الهودات بجميع المناطق. دقة في المواعيد وأسعار تنافسية. اتصل بنا الآن للحصول على خدمة فورية.",
+    "فني ستلايت الكويت - م. رأفت لخدمات الصيانة والبرمجة يقدم حلول تركيب وصيانة و برمجة ستلايت 24 ساعة لجميع مناطق حولي، الأحمدي، الجهراء، والعاصمة. اتصل بنا الآن.",
   keywords: [
     "فني ستلايت الكويت",
     "بنشر متنقل الكويت",
@@ -90,12 +101,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    title: "فني هودات وتصليح أفران في الكويت | خدمة 24 ساعة | اتصل الآن",
+    title: "فني ستلايت الكويت - م. رأفت لخدمات الصيانة والبرمجة | تركيب وصيانة ستلايت 24 ساعة",
     description:
-      "أفضل فني هودات ومطابخ في الكويت مع خبرة في تصليح الأفران والطباخات وتنظيف الهودات بدقة مواعيد وأسعار تنافسية.",
+      "فني ستلايت الكويت م. رأفت يقدم خدمات تركيب وصيانة وبرمجة متكاملة مع تغطية كاملة لكل المحافظات وخدمة طوارئ 24 ساعة.",
     locale: "ar_KW",
     url: BASE_URL,
-    siteName: "Kuwait Service",
+    siteName: BUSINESS_BRAND,
   },
   alternates: {
     canonical: "https://techniciankuwait.com",
@@ -130,6 +141,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <MainNavbar
               navItems={NAV_ITEMS}
               businessNameAr={BUSINESS_NAME_AR}
+              businessNameEn={BUSINESS_NAME_EN}
               formattedPhone={FORMATTED_PHONE}
               phoneNumber={PHONE_NUMBER}
             />
@@ -142,12 +154,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 md:flex-row md:items-start md:justify-between">
                 <div className="space-y-3">
                   <h2 className="text-xl font-semibold text-kuwait-green">
-                    {BUSINESS_BRAND}
+                    {BUSINESS_PROFILE_NAME}
                   </h2>
                   <p className="max-w-sm text-sm text-kuwait-black/70">
                     نقدم خدمات الستلايت، بنشر متنقل، صيانة أفران، وكاميرات مراقبة بأعلى جودة في الكويت. فريقنا متاح 24/7 لخدمتكم.
                   </p>
                 </div>
+
                 <div className="space-y-4">
                   <div>
                     <h3 className="mb-3 text-sm font-semibold text-kuwait-black/80">
@@ -208,6 +221,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   <LeadTrackedLink
                     href={`tel:${PHONE_NUMBER}`}
                     className="block text-kuwait-green transition hover:text-green-700 text-lg font-bold"
+
                     channel="phone"
                     source="footer-call"
                   >
@@ -224,15 +238,38 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <MessageCircle className="h-4 w-4" aria-hidden="true" />
                     واتساب مباشر
                   </LeadTrackedLink>
+                  <div className="space-y-3 pt-4">
+                    <p className="font-semibold text-kuwait-black">موقعنا على خرائط جوجل</p>
+                    <a
+                      href={GOOGLE_MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 rounded-full border border-kuwait-green/40 px-4 py-2 font-medium text-kuwait-green transition hover:bg-kuwait-green/10 hover:text-kuwait-green/90"
+                    >
+                      فتح الموقع (حولي، قطعة 10)
+                    </a>
+                    <p className="text-xs text-kuwait-black/60">ساعات العمل: 24/7</p>
+                    <div className="overflow-hidden rounded-2xl border border-kuwait-green/20 bg-white shadow-sm">
+                      <iframe
+                        src={GOOGLE_MAPS_EMBED_URL}
+                        title={`${BUSINESS_PROFILE_NAME} على خرائط جوجل`}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="h-48 w-full"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="mt-8 text-center text-xs text-kuwait-black/60">
-                {currentYear} {BUSINESS_BRAND}. جميع الحقوق محفوظة.
+                {currentYear} {BUSINESS_PROFILE_NAME}. جميع الحقوق محفوظة.
               </div>
             </footer>
           </div>
         </TrackingProvider>
       </body>
+
     </html>
   );
 }

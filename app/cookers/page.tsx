@@ -5,9 +5,10 @@ import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
 import {
   BASE_URL,
-  BUSINESS_BRAND,
+  BUSINESS_PROFILE_NAME,
   DEFAULT_KEYWORDS,
   FORMATTED_PHONE,
+  OWNER_NAME_AR,
   PHONE_NUMBER,
   SERVICE_AREAS,
   WHATSAPP_LINK,
@@ -24,7 +25,7 @@ const cookerSchema = {
   serviceType: "Cooker & Oven Repair Kuwait",
   provider: {
     "@type": "LocalBusiness",
-    name: BUSINESS_BRAND,
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
     areaServed: SERVICE_AREAS,
     url: `${BASE_URL}/cookers`,
@@ -38,9 +39,9 @@ const cookerSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "فني أفران هندي وصيانة طباخات 24 ساعة | أرخص الأسعار في الكويت",
+  title: `${BUSINESS_PROFILE_NAME} | صيانة طباخات وأفران في الكويت 24 ساعة`,
   description:
-    "فني أفران هندي/باكستاني متخصص في تصليح الطباخات وتنظيف الأفران وتبديل الفالات بقطع أصلية، خدمة 24 ساعة مع أفضل الأسعار في الكويت.",
+    `${BUSINESS_PROFILE_NAME} يقدم صيانة طباخات وأفران وتنظيف عميق وتبديل فالات بقطع أصلية مع خدمة 24 ساعة وأسعار تنافسية في الكويت.`,
   keywords: [
     "تصليح طباخات",
     "تنظيف أفران غاز",
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/cookers`,
   },
   openGraph: {
-    title: "فني أفران هندي في الكويت | خدمة 24 ساعة",
+    title: `${BUSINESS_PROFILE_NAME} | صيانة طباخات وأفران في الكويت 24 ساعة`,
     description:
-      "نقدّم صيانة شاملة للطباخات والأفران مع فني هندي/باكستاني محترف، تنظيف عميق، تبديل فالات وضمان على القطع في جميع مناطق الكويت.",
+      `${BUSINESS_PROFILE_NAME} يقدم صيانة شاملة للطباخات والأفران مع فنيين محترفين وتنظيف عميق وتبديل فالات مع ضمان في جميع مناطق الكويت.`,
     url: `${BASE_URL}/cookers`,
     locale: "ar_KW",
   },
@@ -133,7 +134,7 @@ export default function CookersPage() {
                 اتصل الآن: {FORMATTED_PHONE}
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بخدمة تصليح الطباخات من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب بخدمة تصليح الطباخات من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-green/40 px-5 py-3 text-sm font-semibold text-kuwait-green transition hover:bg-kuwait-green/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -149,7 +150,7 @@ export default function CookersPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={COOKER_HERO_SRC}
-                alt="فني تصليح أفران وطباخات في الكويت"
+                alt="فريق م. رأفت لخدمات الصيانة ينفذ صيانة طباخات وأفران في الكويت"
                 fill
                 className="object-cover"
                 loading="lazy"
@@ -162,7 +163,7 @@ export default function CookersPage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
                 src={COOKER_DETAIL_SRC}
-                alt="فني تصليح أفران وطباخات في الكويت"
+                alt="م. رأفت يشرف على تنظيف فرن غاز وتبديل فالات في الكويت"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"

@@ -4,7 +4,14 @@ import { ArrowLeftCircle, CheckCircle2, MapPin, PhoneCall, Shield } from "lucide
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
-import { BASE_URL, FORMATTED_PHONE, PHONE_NUMBER, WHATSAPP_LINK } from "@/lib/constants";
+import {
+  BASE_URL,
+  BUSINESS_PROFILE_NAME,
+  FORMATTED_PHONE,
+  OWNER_NAME_AR,
+  PHONE_NUMBER,
+  WHATSAPP_LINK,
+} from "@/lib/constants";
 
 const neighborhoods = ["سعد العبدالله", "النسيم", "العيون", "القصر", "تيماء", "الواحة"];
 
@@ -21,9 +28,9 @@ const schema = {
   serviceType: "CCTV Installation Jahra",
   provider: {
     "@type": "LocalBusiness",
-    name: "Kuwait Service",
+    name: BUSINESS_PROFILE_NAME,
     telephone: PHONE_NUMBER,
-    areaServed: neighborhoods,
+    serviceArea: neighborhoods,
     url: `${BASE_URL}/cameras-jahra`,
   },
   areaServed: neighborhoods,
@@ -34,9 +41,9 @@ const schema = {
 };
 
 export const metadata: Metadata = {
-  title: "تركيب كاميرات الجهراء | أنظمة مراقبة سعد العبدالله والنسيم",
+  title: `فني كاميرات الجهراء | ${BUSINESS_PROFILE_NAME}`,
   description:
-    "تركيب كاميرات الجهراء من Kuwait Service يقدم حلول مراقبة متكاملة للمنازل والشركات في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة مع دعم فني سريع.",
+    `${BUSINESS_PROFILE_NAME} يوفر تركيب كاميرات الجهراء مع دعم فني سريع في سعد العبدالله، النسيم، العيون، القصر، تيماء، والواحة.`,
   keywords: [
     "كاميرات مراقبة الجهراء",
     "تركيب كاميرات سعد العبدالله",
@@ -48,9 +55,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/cameras-jahra`,
   },
   openGraph: {
-    title: "تركيب كاميرات الجهراء",
+    title: `فني كاميرات الجهراء | ${BUSINESS_PROFILE_NAME}`,
     description:
-      "أنظمة مراقبة متطورة في محافظة الجهراء تشمل سعد العبدالله والنسيم والواحة مع مراقبة عبر الهاتف ودعم فني محترف.",
+      `${BUSINESS_PROFILE_NAME} يقدم خدمة كاميرات مراقبة في الجهراء تغطي سعد العبدالله والنسيم والواحة مع فنيين محترفين واستجابة خلال دقائق.`,
     url: `${BASE_URL}/cameras-jahra`,
     locale: "ar_KW",
   },
@@ -83,7 +90,7 @@ export default function CamerasJahraPage() {
             </ul>
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بتركيب كاميرات مراقبة في الجهراء من Kuwait Service.")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب بتركيب كاميرات مراقبة في الجهراء من ${OWNER_NAME_AR}.`)}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-kuwait-red/40 px-5 py-3 text-sm font-semibold text-kuwait-red transition hover:bg-kuwait-red/10"
                 target="_blank"
                 rel="noopener noreferrer"
