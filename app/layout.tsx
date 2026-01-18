@@ -33,10 +33,13 @@ const cairo = Cairo({
 type NavItem = {
   href: Route;
   label: string;
+  badge?: string;
+  isHighlighted?: boolean;
 };
 
 const NAV_ITEMS: NavItem[] = [
   { href: "/" as Route, label: "الرئيسية" },
+  { href: "/world-cup" as Route, label: "عروض كأس العالم ⚽", badge: "جديد", isHighlighted: true },
   { href: "/satellite" as Route, label: "فني ستلايت" },
   { href: "/mobile-mechanic" as Route, label: "بنشر متنقل" },
   { href: "/oven-repair" as Route, label: "تصليح طباخات" },
@@ -81,11 +84,11 @@ const globalBusinessSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "فني ستلايت الكويت - م. رأفت لخدمات الصيانة والبرمجة | تركيب وصيانة ستلايت 24 ساعة",
-    template: "%s | م. رأفت لخدمات الصيانة والبرمجة",
+    default: "فني ستلايت الكويت | فريق محترف لصيانة وبرمجة الستلايت 24 ساعة",
+    template: "%s | فريق فني ستلايت الكويت",
   },
   description:
-    "فني ستلايت الكويت - م. رأفت لخدمات الصيانة والبرمجة يقدم حلول تركيب وصيانة و برمجة ستلايت 24 ساعة لجميع مناطق حولي، الأحمدي، الجهراء، والعاصمة. اتصل بنا الآن.",
+    "فني ستلايت الكويت | فريق فني ستلايت الكويت يقدم حلول تركيب وصيانة وبرمجة ستلايت 24 ساعة لجميع مناطق حولي، الأحمدي، الجهراء، والعاصمة. تواصلوا معنا الآن.",
   keywords: [
     "فني ستلايت الكويت",
     "بنشر متنقل الكويت",
@@ -106,9 +109,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    title: "فني ستلايت الكويت - م. رأفت لخدمات الصيانة والبرمجة | تركيب وصيانة ستلايت 24 ساعة",
+    title: "فني ستلايت الكويت | فريق محترف لصيانة وبرمجة الستلايت 24 ساعة",
     description:
-      "فني ستلايت الكويت م. رأفت يقدم خدمات تركيب وصيانة وبرمجة متكاملة مع تغطية كاملة لكل المحافظات وخدمة طوارئ 24 ساعة.",
+      "فريق فني ستلايت الكويت يقدم خدمات تركيب وصيانة وبرمجة متكاملة مع تغطية كاملة لكل المحافظات وخدمة طوارئ 24 ساعة.",
     locale: "ar_KW",
     url: BASE_URL,
     siteName: BUSINESS_BRAND,
@@ -144,21 +147,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <TrackingProvider>
           <div className="relative flex min-h-screen flex-col">
             <div className="sticky top-0 z-50">
-              <div className="bg-gradient-to-l from-kuwait-green via-kuwait-green/90 to-kuwait-red text-white shadow-lg">
-                <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-2 px-4 py-2 text-center sm:flex-row sm:gap-3">
-                  <span className="text-sm font-semibold sm:text-base">
-                    ⚽ خصم خاص لتركيب وصيانة الستلايت قبل انطلاق كأس العالم - اتصل الآن!
+              <Link
+                href={"/world-cup" as Route}
+                className="block bg-gradient-to-l from-kuwait-green via-kuwait-green/90 to-kuwait-red text-white shadow-lg transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              >
+                <div className="mx-auto flex w-full max-w-6xl items-center justify-center px-4 py-2 text-center">
+                  <span className="inline-flex items-center gap-3 text-sm font-semibold sm:text-base">
+                    ⚽ عروض حصرية من فريق فني ستلايت الكويت للمونديال - اتصل الآن
+                    <span className="hidden rounded-full bg-white/20 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white/90 sm:inline-flex">
+                      New
+                    </span>
                   </span>
-                  <LeadTrackedLink
-                    href={`tel:${PHONE_NUMBER}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs font-semibold text-white transition hover:bg-white/25 sm:text-sm"
-                    channel="phone"
-                    source="world-cup-banner-call"
-                  >
-                    الاتصال الفوري: {FORMATTED_PHONE}
-                  </LeadTrackedLink>
                 </div>
-              </div>
+              </Link>
 
               <MainNavbar
                 navItems={NAV_ITEMS}
@@ -233,6 +234,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
                           className="transition hover:text-kuwait-green"
                         >
                           تصليح طباخات الجهراء
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={"/world-cup" as Route}
+                          className="transition hover:text-kuwait-green"
+                        >
+                          تجهيزات كأس العالم
                         </Link>
                       </li>
                     </ul>

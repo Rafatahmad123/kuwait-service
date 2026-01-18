@@ -151,7 +151,7 @@ export default function CamerasPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={CAMERAS_HERO_SRC}
-                alt="م. رأفت يشرف على تركيب وصيانة كاميرات مراقبة ذكية في الكويت"
+                alt="فريق فني ستلايت الكويت يشرف على تركيب وصيانة كاميرات مراقبة ذكية في الكويت"
                 fill
                 className="object-cover"
                 loading="lazy"
@@ -164,7 +164,7 @@ export default function CamerasPage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
                 src={CAMERAS_INSTALL_SRC}
-                alt="فريق م. رأفت يثبت كاميرات مراقبة ذكية مع اختبار البث"
+                alt="فريق فني ستلايت الكويت يثبت كاميرات مراقبة ذكية مع اختبار البث"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"

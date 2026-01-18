@@ -120,7 +120,7 @@ export default function CookersJahraPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white shadow-lg">
               <Image
                 src="/images/cookers-hero.jpg"
-                alt="فريق م. رأفت لخدمات الصيانة ينفذ صيانة طباخات في الجهراء"
+                alt="فريق فني ستلايت الكويت ينفذ صيانة طباخات في الجهراء"
                 fill
                 className="object-cover"
                 priority

@@ -10,6 +10,8 @@ import LeadTrackedLink from "@/components/LeadTrackedLink";
 type NavItem = {
   href: Route;
   label: string;
+  badge?: string;
+  isHighlighted?: boolean;
 };
 
 type MainNavbarProps = {
@@ -52,9 +54,23 @@ export default function MainNavbar({
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-kuwait-black/80 transition hover:text-kuwait-green"
+                className={`group inline-flex items-center gap-2 rounded-full px-3 py-1.5 transition ${
+                  item.isHighlighted
+                    ? "bg-gradient-to-l from-[#ffe08a] via-[#facc15] to-[#f59e0b] text-[#3b2f0c] shadow-[0_12px_30px_rgba(250,204,21,0.35)] hover:brightness-105"
+                    : "text-kuwait-black/80 hover:text-kuwait-green"
+                }`}
               >
                 {item.label}
+                {item.badge && !item.isHighlighted && (
+                  <span className="rounded-full bg-kuwait-green/10 px-2 py-0.5 text-[10px] font-semibold text-kuwait-green">
+                    {item.badge}
+                  </span>
+                )}
+                {item.badge && item.isHighlighted && (
+                  <span className="rounded-full bg-white/30 px-2 py-0.5 text-[10px] font-semibold text-[#3b2f0c]">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             ))}
           </nav>
@@ -112,10 +128,25 @@ export default function MainNavbar({
               <Link
                 key={item.href}
                 href={item.href}
-                className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-white/90 transition hover:border-white/30 hover:text-white"
+                className={`w-full rounded-full border px-4 py-3 text-white/90 transition hover:text-white ${
+                  item.isHighlighted
+                    ? "border-[#facc15]/70 bg-gradient-to-l from-[#facc15]/20 via-[#f59e0b]/10 to-transparent"
+                    : "border-white/10 bg-white/5 hover:border-white/30"
+                }`}
                 onClick={closeMenu}
               >
-                {item.label}
+                <span className="flex items-center justify-between gap-2">
+                  <span>{item.label}</span>
+                  {item.badge && (
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+                        item.isHighlighted ? "bg-white/20 text-white" : "bg-white/15 text-white/90"
+                      }`}
+                    >
+                      {item.badge}
+                    </span>
+                  )}
+                </span>
               </Link>
             ))}
           </nav>

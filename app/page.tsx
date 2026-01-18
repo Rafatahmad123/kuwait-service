@@ -1,6 +1,6 @@
 import type { Metadata, Route } from "next";
 import Link from "next/link";
-import { ArrowLeftCircle, CheckCircle2, PhoneCall } from "lucide-react";
+import { ArrowLeftCircle, CheckCircle2, PhoneCall, Trophy } from "lucide-react";
 
 import JsonLd from "@/components/JsonLd";
 import LeadTrackedLink from "@/components/LeadTrackedLink";
@@ -145,7 +145,7 @@ const homeSchema = {
 export const metadata: Metadata = {
   title: `${BUSINESS_PROFILE_NAME} | حلول ستلايت وصيانة متكاملة في الكويت`,
   description:
-    `${BUSINESS_PROFILE_NAME} يقدم خدمات ستلايت، ميكانيكي متنقل، صيانة أفران، وكاميرات مراقبة بخدمة 24 ساعة لكل مناطق حولي، الأحمدي، الجهراء، والعاصمة.`,
+    `${BUSINESS_PROFILE_NAME} يقدم خدمات ستلايت، فرق ميكانيكية متنقلة، صيانة أفران، وكاميرات مراقبة بخدمة 24 ساعة لكل مناطق حولي، الأحمدي، الجهراء، والعاصمة.`,
   keywords: [
     ...DEFAULT_KEYWORDS,
     "فني ستلايت الكويت",
@@ -181,7 +181,7 @@ export default function HomePage() {
               {BUSINESS_NAME_AR}
             </h1>
             <p className="text-lg text-white/85">
-              نقدم حلولاً سريعة ومتكاملة للستلايت، الميكانيك المتنقل، صيانة الأفران، وأنظمة المراقبة بفرق محترفة تغطي كل مناطق الكويت.
+              نقدّم حلولاً سريعة ومتكاملة للستلايت، الفرق الميكانيكية المتنقلة، صيانة الأفران، وأنظمة المراقبة مع فريق محترف يغطي كل مناطق الكويت.
             </p>
             <div className="grid gap-3">
               {heroHighlights.map((highlight) => (
@@ -202,7 +202,7 @@ export default function HomePage() {
                 <span dir="ltr">{FORMATTED_PHONE}</span>
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أرغب في طلب خدمة من ${OWNER_NAME_AR}.`)}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب في طلب خدمة من فريق فني ستلايت الكويت.")}`}
                 className="flex items-center justify-center gap-2 rounded-full border border-white/60 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -223,6 +223,36 @@ export default function HomePage() {
                 </span>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative -mt-10 px-4">
+        <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 overflow-hidden rounded-[32px] border border-white/60 bg-gradient-to-l from-[#04203a] via-[#05314f] to-[#07406a] p-10 text-white shadow-[0_30px_80px_rgba(3,24,48,0.45)] backdrop-blur">
+          <div className="flex flex-col gap-4 text-center md:text-right">
+            <span className="mx-auto flex items-center justify-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70 md:mx-0 md:self-end">
+              مونديال 2026
+            </span>
+            <div className="flex flex-col items-center gap-3 md:flex-row md:justify-between">
+              <div className="hidden md:flex h-14 w-14 items-center justify-center rounded-full bg-white/10 text-white/80">
+                <Trophy className="h-7 w-7" aria-hidden="true" />
+              </div>
+              <div className="space-y-3 text-center md:text-right">
+                <h2 className="text-3xl font-bold md:text-4xl">فني ستلايت الكويت - جاهزون للمونديال</h2>
+                <p className="text-sm text-white/85 md:text-base">
+                  فريقنا المتخصص يوفر لكم أسرع خدمات تركيب وصيانة الستلايت وبرمجة الرسيفرات لتجهيز ديوانياتكم قبل انطلاق كاس العالم.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-3 md:flex-row md:justify-end">
+            <Link
+              href={"/world-cup" as Route}
+              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-l from-[#facc15] via-[#fbbf24] to-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#3b2f0c] shadow-[0_18px_50px_rgba(250,191,36,0.35)] transition hover:scale-105"
+            >
+              <Trophy className="h-5 w-5" aria-hidden="true" />
+              <span>شاهد عروض المونديال وصور أعمالنا</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -298,9 +328,9 @@ export default function HomePage() {
       <section className="bg-white py-16">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 md:flex-row md:items-center">
           <div className="flex-1 space-y-4">
-            <h2 className="section-title">ليه تختار {OWNER_NAME_AR}؟</h2>
+            <h2 className="section-title">ليه تختار فريق فني ستلايت الكويت؟</h2>
             <p className="text-base text-kuwait-black/70">
-              فريق {OWNER_NAME_AR} جاهز لدعمك في أي وقت مع ضمان جودة الأعمال وخدمة عملاء متواصلة عبر الهاتف والواتساب، بالإضافة إلى تغطية شاملة لمناطق الكويت بما فيها مبارك الكبير، الجابرية، والقرين.
+              نحن جاهزون لدعمكم في أي وقت مع ضمان جودة الأعمال وخدمة عملاء متواصلة عبر الهاتف والواتساب، بالإضافة إلى تغطية شاملة لمناطق الكويت بما فيها مبارك الكبير، الجابرية، والقرين.
             </p>
           </div>
           <div className="flex-1 grid gap-4 sm:grid-cols-2">
@@ -342,7 +372,7 @@ export default function HomePage() {
               <span dir="ltr">{FORMATTED_PHONE}</span>
             </LeadTrackedLink>
             <LeadTrackedLink
-              href={`${WHATSAPP_LINK}?text=${encodeURIComponent(`أحتاج خدمة عاجلة من ${OWNER_NAME_AR}.`)}`}
+              href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أحتاج خدمة عاجلة من فريق فني ستلايت الكويت.")}`}
               className="flex items-center justify-center gap-2 rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               target="_blank"
               rel="noopener noreferrer"

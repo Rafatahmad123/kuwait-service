@@ -114,7 +114,7 @@ export default function CarServiceJahraPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl border border-kuwait-red/20 bg-white shadow-lg">
               <Image
                 src="/images/car-service-hero.jpg"
-                alt="فريق م. رأفت لخدمات الصيانة يشغل بنشر متنقل في الجهراء"
+                alt="فريق فني ستلايت الكويت يشغل بنشر متنقل في الجهراء"
                 fill
                 className="object-cover"
                 priority

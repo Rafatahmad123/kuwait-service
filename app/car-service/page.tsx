@@ -40,9 +40,9 @@ const mobileMechanicSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "بنشر متنقل الكويت | م. رأفت لخدمات الصيانة والطوارئ",
+  title: "بنشر متنقل الكويت | فريق فني ستلايت الكويت لخدمات الصيانة والطوارئ",
   description:
-    "م. رأفت يقدم خدمة بنشر متنقل هندي/باكستاني لتبديل التواير والبطاريات وصيانة السيارات على الطريق في الكويت مع طوارئ 24 ساعة وأسعار تنافسية.",
+    "فريق فني ستلايت الكويت يقدم خدمة بنشر متنقل احترافية لتبديل التواير والبطاريات وصيانة السيارات على الطريق في الكويت مع دعم 24 ساعة وأسعار تنافسية.",
   keywords: [
     "بنشر متنقل الكويت",
     "تبديل تواير",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/car-service`,
   },
   openGraph: {
-    title: "بنشر متنقل الكويت مع م. رأفت | خدمة 24 ساعة",
+    title: "بنشر متنقل الكويت مع فريق فني ستلايت الكويت | خدمة 24 ساعة",
     description:
-      "م. رأفت وفريقه يقدمون ميكانيكي متنقل لتبديل الإطارات والبطاريات وإصلاح الأعطال على الطريق مع وصول سريع لجميع مناطق الكويت.",
+      "فريق فني ستلايت الكويت يوفر ميكانيكيًا متنقلًا لتبديل الإطارات والبطاريات وإصلاح الأعطال على الطريق مع وصول سريع لجميع مناطق الكويت.",
     url: `${BASE_URL}/car-service`,
     locale: "ar_KW",
   },
@@ -149,7 +149,7 @@ export default function CarServicePage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={CAR_SERVICE_HERO_SRC}
-                alt="فريق م. رأفت يقدم خدمة بنشر وتصليح سيارات متنقل في الكويت"
+                alt="فريق فني ستلايت الكويت يقدم خدمة بنشر وتصليح سيارات متنقل في الكويت"
                 fill
                 className="object-cover"
                 loading="lazy"
@@ -162,7 +162,7 @@ export default function CarServicePage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-red/20 bg-white p-2 md:h-60">
               <Image
                 src={CAR_SERVICE_TOOLS_SRC}
-                alt="معدات م. رأفت لخدمة بنشر متنقل وتبديل الإطارات في الكويت"
+                alt="معدات فريق فني ستلايت الكويت لخدمة بنشر متنقل وتبديل الإطارات في الكويت"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"

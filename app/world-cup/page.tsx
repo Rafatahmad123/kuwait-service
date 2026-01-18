@@ -25,7 +25,7 @@ const FEATURE_PLACEHOLDER =
 const announcementSchema = {
   "@context": "https://schema.org",
   "@type": "SpecialAnnouncement",
-  name: "حملة تجهيزات كأس العالم - م. رأفت",
+  name: `حملة تجهيزات كأس العالم - ${OWNER_NAME_AR}`,
   text: "خصم خاص على تركيب وصيانة الستلايت وتجهيز الديوانيات والمقاهي لموسم كأس العالم في الكويت.",
   datePosted: "2026-01-18",
   expires: "2026-07-31",
@@ -130,9 +130,9 @@ const beinSteps = [
 ];
 
 export const metadata: Metadata = {
-  title: "تجهيزات كأس العالم في الكويت | تركيب وصيانة ستلايت - م. رأفت",
+  title: "تجهيزات كأس العالم في الكويت | تركيب وصيانة ستلايت - فريق فني ستلايت الكويت",
   description:
-    "استعد لموسم كأس العالم في الكويت مع م. رأفت: تركيب ستلايت للديوانيات والمقاهي، برمجة الرسيفرات، صيانة الشاشات، وضبط بي إن سبورت بخدمة فورية 24/7.",
+    "استعد لموسم كأس العالم في الكويت مع فريق فني ستلايت الكويت: تركيب ستلايت للديوانيات والمقاهي، برمجة الرسيفرات، صيانة الشاشات، وضبط بي إن سبورت بخدمة فورية 24/7.",
   keywords: [
     "تجهيزات كأس العالم",
     "تركيب ستلايت الكويت",
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
     canonical: `${BASE_URL}/world-cup`,
   },
   openGraph: {
-    title: "تجهيزات كأس العالم في الكويت - م. رأفت",
+    title: "تجهيزات كأس العالم في الكويت - فريق فني ستلايت الكويت",
     description:
       "باقات كاملة لتركيب ستلايت، برمجة الرسيفر، وضبط باقات بي إن سبورت للديوانيات والمقاهي قبل كأس العالم.",
     url: `${BASE_URL}/world-cup`,
@@ -184,7 +184,7 @@ export default function WorldCupPage() {
               ⚽ موسم كأس العالم 2026 في الكويت
             </span>
             <h1 className="text-3xl font-bold leading-snug text-white md:text-4xl lg:text-5xl">
-              تجهيزات كأس العالم: تركيب وصيانة ستلايت في الكويت - م. رأفت
+              تجهيزات كأس العالم: تركيب وصيانة ستلايت في الكويت - فريق فني ستلايت الكويت
             </h1>
             <p className="text-lg text-white/80">
               استعد لتجربة مشاهدة استثنائية في الديوانية، المقهى، أو المنزل مع فريق متخصص يقدم حلول تركيب الستلايت،
@@ -203,7 +203,7 @@ export default function WorldCupPage() {
                 </span>
               </LeadTrackedLink>
               <LeadTrackedLink
-                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("مرحباً م. رأفت، أحتاج تجهيزات كأس العالم للديوانية")}`}
+                href={`${WHATSAPP_LINK}?text=${encodeURIComponent("مرحباً فريق فني ستلايت الكويت، أحتاج تجهيزات كأس العالم للديوانية")}`}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/10"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -277,7 +277,7 @@ export default function WorldCupPage() {
             <div className="relative h-full min-h-[320px] overflow-hidden rounded-[32px] border border-white/15 bg-white/5">
               <Image
                 src={ACTION_IMAGE}
-                alt="فريق م. رأفت أثناء تركيب طبق ستلايت خارجي للديوانيات"
+                alt="فريق فني ستلايت الكويت أثناء تركيب طبق ستلايت خارجي للديوانيات"
                 width={1100}
                 height={780}
                 className="h-full w-full object-cover"
@@ -296,14 +296,14 @@ export default function WorldCupPage() {
           </span>
           <h2 className="text-3xl font-bold text-white">معرض أعمالنا خلال تجهيزات كأس العالم</h2>
           <p className="text-sm text-white/75">
-            لقطات حية من فرق م. رأفت أثناء تركيب أطباق الستلايت وتوزيع الإشارة عالية الجودة للديوانيات والمقاهي.
+            لقطات حية من فرق فريق فني ستلايت الكويت أثناء تركيب أطباق الستلايت وتوزيع الإشارة عالية الجودة للديوانيات والمقاهي.
           </p>
         </header>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="group relative overflow-hidden rounded-[28px] border border-white/15 bg-white/5 shadow-[0_24px_60px_rgba(1,20,32,0.45)]">
             <Image
               src={ACTION_IMAGE}
-              alt="فني ستلايت من فريق م. رأفت يثبت طبق دش على سطح منزل في الكويت"
+              alt="فني ستلايت من فريق فني ستلايت الكويت يثبت طبق دش على سطح منزل في الكويت"
               width={1200}
               height={900}
               className="h-80 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.03] sm:h-[420px]"
@@ -447,7 +447,7 @@ export default function WorldCupPage() {
               حجز زيارة فورية
             </LeadTrackedLink>
             <LeadTrackedLink
-              href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بحجز خدمة كأس العالم من م. رأفت")}`}
+              href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أرغب بحجز خدمة كأس العالم من فريق فني ستلايت الكويت")}`}
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10"
               target="_blank"
               rel="noopener noreferrer"
@@ -472,7 +472,7 @@ export default function WorldCupPage() {
           <span>اتصال كأس العالم</span>
         </LeadTrackedLink>
         <LeadTrackedLink
-          href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أريد تجهيزات كأس العالم من م. رأفت")}`}
+          href={`${WHATSAPP_LINK}?text=${encodeURIComponent("أريد تجهيزات كأس العالم من فريق فني ستلايت الكويت")}`}
           className="flex w-full items-center justify-center gap-3 rounded-full bg-[#25d366] px-4 py-3 text-sm font-semibold text-[#04210f] shadow-[0_18px_40px_rgba(37,211,102,0.35)] transition hover:-translate-y-0.5 hover:bg-[#1ec15c] md:w-auto"
           target="_blank"
           rel="noopener noreferrer"

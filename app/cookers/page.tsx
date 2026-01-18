@@ -150,7 +150,7 @@ export default function CookersPage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={COOKER_HERO_SRC}
-                alt="فريق م. رأفت لخدمات الصيانة ينفذ صيانة طباخات وأفران في الكويت"
+                alt="فريق فني ستلايت الكويت ينفذ صيانة طباخات وأفران في الكويت"
                 fill
                 className="object-cover"
                 loading="lazy"
@@ -163,7 +163,7 @@ export default function CookersPage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
                 src={COOKER_DETAIL_SRC}
-                alt="م. رأفت يشرف على تنظيف فرن غاز وتبديل فالات في الكويت"
+                alt="فريق فني ستلايت الكويت يشرف على تنظيف فرن غاز وتبديل فالات في الكويت"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"

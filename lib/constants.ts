@@ -1,7 +1,7 @@
-export const OWNER_NAME_AR = "م. رأفت";
-export const OWNER_NAME_EN = "Eng. Raafat";
+export const OWNER_NAME_AR = "فريق فني ستلايت الكويت";
+export const OWNER_NAME_EN = "Kuwait Satellite Pros";
 
-export const BUSINESS_NAME_AR = "فني ستلايت الكويت - م. رأفت لخدمات الصيانة والبرمجة";
+export const BUSINESS_NAME_AR = "فني ستلايت الكويت | فريق فني ستلايت الكويت للصيانة والبرمجة";
 export const BUSINESS_NAME_EN = OWNER_NAME_EN;
 export const BUSINESS_BRAND = `${BUSINESS_NAME_EN} | ${BUSINESS_NAME_AR}`;
 export const BUSINESS_PROFILE_NAME = BUSINESS_NAME_AR;

@@ -151,7 +151,7 @@ export default function SatellitePage() {
             <figure className="relative h-64 w-full overflow-hidden rounded-3xl shadow-lg md:h-[360px]">
               <Image
                 src={SATELLITE_HERO_SRC}
-                alt="فريق م. رأفت لخدمات الصيانة يركب طبق دش ستلايت في الكويت"
+                alt="فريق فني ستلايت الكويت يركب طبق دش ستلايت في الكويت"
                 fill
                 className="object-cover"
                 placeholder="blur"
@@ -164,7 +164,7 @@ export default function SatellitePage() {
             <figure className="relative h-48 w-full overflow-hidden rounded-3xl border border-kuwait-green/20 bg-white p-2 md:h-60">
               <Image
                 src={SATELLITE_INSTALL_SRC}
-                alt="م. رأفت وفريقه ينجزون تركيب رسيفر وستلايت في الكويت"
+                alt="فريق فني ستلايت الكويت ينجز تركيب رسيفر وستلايت في الكويت"
                 fill
                 className="rounded-2xl object-cover"
                 loading="lazy"
