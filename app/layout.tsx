@@ -97,6 +97,11 @@ export const metadata: Metadata = {
     "رقم فني ستلايت",
     "ميكانيكي متنقل الكويت",
     "خدمات تصليح بالكويت",
+    "تركيب ستلايت",
+    "قنوات رياضية",
+    "بي إن سبورت",
+    "كأس العالم",
+    "رسيفرات HD",
     ...SERVICE_AREAS,
   ],
   openGraph: {
@@ -138,13 +143,31 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="min-h-screen bg-kuwait-sand text-kuwait-black antialiased selection:bg-kuwait-green/20">
         <TrackingProvider>
           <div className="relative flex min-h-screen flex-col">
-            <MainNavbar
-              navItems={NAV_ITEMS}
-              businessNameAr={BUSINESS_NAME_AR}
-              businessNameEn={BUSINESS_NAME_EN}
-              formattedPhone={FORMATTED_PHONE}
-              phoneNumber={PHONE_NUMBER}
-            />
+            <div className="sticky top-0 z-50">
+              <div className="bg-gradient-to-l from-kuwait-green via-kuwait-green/90 to-kuwait-red text-white shadow-lg">
+                <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-2 px-4 py-2 text-center sm:flex-row sm:gap-3">
+                  <span className="text-sm font-semibold sm:text-base">
+                    ⚽ خصم خاص لتركيب وصيانة الستلايت قبل انطلاق كأس العالم - اتصل الآن!
+                  </span>
+                  <LeadTrackedLink
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs font-semibold text-white transition hover:bg-white/25 sm:text-sm"
+                    channel="phone"
+                    source="world-cup-banner-call"
+                  >
+                    الاتصال الفوري: {FORMATTED_PHONE}
+                  </LeadTrackedLink>
+                </div>
+              </div>
+
+              <MainNavbar
+                navItems={NAV_ITEMS}
+                businessNameAr={BUSINESS_NAME_AR}
+                businessNameEn={BUSINESS_NAME_EN}
+                formattedPhone={FORMATTED_PHONE}
+                phoneNumber={PHONE_NUMBER}
+              />
+            </div>
 
             <main className="flex-1">
               {children}
@@ -221,7 +244,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   <LeadTrackedLink
                     href={`tel:${PHONE_NUMBER}`}
                     className="block text-kuwait-green transition hover:text-green-700 text-lg font-bold"
-
                     channel="phone"
                     source="footer-call"
                   >
