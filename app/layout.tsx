@@ -51,33 +51,35 @@ const globalBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": BUSINESS_PROFILE_NAME,
-  "serviceType": "Satellite Service",
   "url": BASE_URL,
   "telephone": PHONE_NUMBER,
   "description": `${BUSINESS_PROFILE_NAME} يقدم خدمات تركيب وصيانة وبرمجة ستلايت مع تغطية شاملة لكل المناطق في الكويت على مدار الساعة.`,
   "image": `${BASE_URL}/og-image.jpg`,
-
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Kuwait",
+    },
+    ...SERVICE_AREAS.map((area) => ({
+      "@type": "City",
+      "name": area,
+    })),
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "KW",
     "addressRegion": "Kuwait",
     "addressLocality": "Kuwait",
   },
-  "areaServed": SERVICE_AREAS.map(area => ({
-    "@type": "City",
-    "name": area
-  })),
-  "priceRange": "$$",
-  "openingHours": "Mo-Su 00:00-23:59",
   "hasMap": GOOGLE_MAPS_URL,
   "sameAs": [GOOGLE_MAPS_URL],
-
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": PHONE_NUMBER,
     "contactType": "customer service",
     "availableLanguage": ["Arabic", "English"],
-
   },
 };
 

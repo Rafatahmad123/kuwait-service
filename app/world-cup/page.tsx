@@ -49,6 +49,37 @@ const announcementSchema = {
   },
 };
 
+const worldCupFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "أفضل فني ستلايت في الكويت؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "فريق فني ستلايت الكويت يوفر فنيين معتمدين لتجهيز الديوانيات والمنازل بأحدث أنظمة الستلايت مع دعم فني مستمر في جميع مناطق الكويت.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "خدمات تركيب ستلايت للمونديال؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "نوفر باقات تجهيز كاملة لموسم كأس العالم تشمل تركيب الأطباق، برمجة الرسيفرات، وضبط باقات بي إن سبورت مع زيارات ميدانية قبل المباريات.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "صيانة طباخات بالمنزل؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "يتوفر لدينا فريق صيانة متنقل للطباخات والأفران داخل المنزل مع تنظيف عميق وتبديل للقطع الأصلية خلال نفس اليوم.",
+      },
+    },
+  ],
+};
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -171,6 +202,7 @@ export default function WorldCupPage() {
     <div className="relative min-h-screen bg-gradient-to-b from-[#001b2e] via-[#03243b] to-[#041727] pb-40 text-white md:pb-24">
       <JsonLd data={announcementSchema} />
       <JsonLd data={serviceSchema} />
+      <JsonLd data={worldCupFaqSchema} />
 
       <section className="relative overflow-hidden pt-24">
         <div className="pointer-events-none absolute inset-0 opacity-70">

@@ -13,7 +13,7 @@ export type LeadTrackedLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>,
 };
 
 const LeadTrackedLink = forwardRef<HTMLAnchorElement, LeadTrackedLinkProps>(
-  ({ channel, source, metadata, onClick, href, target, rel, ...rest }, ref) => {
+  ({ channel, source, metadata, onClick, href, target, rel, className, ...rest }, ref) => {
     const handleClick = async (event: React.MouseEvent<HTMLAnchorElement>) => {
       if (onClick) {
         onClick(event);
@@ -38,7 +38,21 @@ const LeadTrackedLink = forwardRef<HTMLAnchorElement, LeadTrackedLinkProps>(
       }
     };
 
-    return <a ref={ref} href={href} onClick={handleClick} target={target} rel={rel} {...rest} />;
+    const trackingClass = channel === "phone" ? "contact-conversion--call" : "contact-conversion--whatsapp";
+    const composedClassName = [className, "contact-conversion", trackingClass].filter(Boolean).join(" ");
+
+    return (
+      <a
+        ref={ref}
+        href={href}
+        onClick={handleClick}
+        target={target}
+        rel={rel}
+        className={composedClassName}
+        data-conversion-channel={channel}
+        {...rest}
+      />
+    );
   }
 );
 

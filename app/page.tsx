@@ -142,6 +142,37 @@ const homeSchema = {
   keywords: DEFAULT_KEYWORDS,
 };
 
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "أفضل فني ستلايت في الكويت؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "فريق فني ستلايت الكويت يقدم خدمة تركيب وصيانة ستلايت مع فرق متخصصة تغطي جميع مناطق الكويت خلال 30 دقيقة وتوفر ضماناً على جودة الإشارة والأجهزة.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "خدمات تركيب ستلايت للمونديال؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "نوفر باقات تجهيز كاملة لموسم كأس العالم تشمل تركيب أطباق الستلايت، برمجة الرسيفرات، وضبط باقات بي إن سبورت للديوانيات والمنازل مع دعم فني طوال البطولة.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "صيانة طباخات بالمنزل؟",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "نرسل فنيين متخصصين لصيانة الطباخات والأفران داخل المنزل مع فحص شامل، تنظيف عميق، وتبديل القطع الأصلية لضمان سلامة الاستخدام.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: `${BUSINESS_PROFILE_NAME} | حلول ستلايت وصيانة متكاملة في الكويت`,
   description:
@@ -169,6 +200,7 @@ export default function HomePage() {
   return (
     <div className="space-y-20 pb-20">
       <JsonLd data={homeSchema} />
+      <JsonLd data={homeFaqSchema} />
 
       <section className="relative overflow-hidden bg-gradient-to-br from-kuwait-green/90 via-kuwait-green/80 to-kuwait-red/70 text-white">
         <div className="absolute inset-0 bg-grid-pattern opacity-30" aria-hidden="true" />
