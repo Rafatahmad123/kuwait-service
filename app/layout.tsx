@@ -2,6 +2,8 @@ import type { Metadata, Route } from "next";
 import Link from "next/link";
 import { Cairo } from "next/font/google";
 import { MessageCircle } from "lucide-react";
+// استيراد المكون الرسمي للسكريبت
+import Script from "next/script";
 
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
@@ -143,6 +145,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ar" dir="rtl" className={`${cairo.variable} font-cairo`}>
       <head>
+        {/* --- بداية كود تتبع جوجل ادز --- */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17948760863"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tracking" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17948760863');
+          `}
+        </Script>
+        {/* --- نهاية كود تتبع جوجل ادز --- */}
+
         <JsonLd data={globalBusinessSchema} />
       </head>
       <body className="min-h-screen bg-kuwait-sand text-kuwait-black antialiased selection:bg-kuwait-green/20">
@@ -302,7 +319,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
         </TrackingProvider>
       </body>
-
     </html>
   );
 }
